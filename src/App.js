@@ -1,9 +1,8 @@
 import React from "react";
-import { BrowserRouter as Router, Route, Link, Switch } from "react-router-dom";
-import logo from "./logo.svg";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import "./App.css";
 import { Signup } from "./containers/Signup";
-import Login from './components/Login';
+import Login from "./components/Login";
 
 function App() {
   return (
@@ -11,7 +10,7 @@ function App() {
       <header className="App-header">
         <h2>Log in</h2>
         <Login />
-        
+
         <h2>Sign up</h2>
         <Signup />
       </header>
