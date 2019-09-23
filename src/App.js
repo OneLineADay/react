@@ -4,6 +4,7 @@ import logo from "./logo.svg";
 import "./App.css";
 import { Signup } from "./containers/Signup";
 import Login from './components/Login';
+import './components/Login.css'
 
 function App() {
   return (

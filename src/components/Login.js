@@ -2,6 +2,14 @@ import React, { useState, useEffect } from "react";
 import { withFormik, Form, Field, validateYupSchema } from 'formik';
 import * as Yup from "yup";
 import axios from "axios";
+import styled from "styled-components";
+
+const StyledForm = styled.div`
+display: flex;
+flex-direction: column;
+justify-content: space-between;
+align-items: center;
+`
 
 const initialState = {
     name: "",
@@ -29,8 +37,8 @@ const Login = ({ errors, touched, status }) => {
 
     return(
         <div>
-            <Form>
-                <Field
+            <StyledForm>
+                <Field className="LoginTab"
                  type="text" 
                  name="name" 
                  placeholder="Name" 
@@ -38,7 +46,7 @@ const Login = ({ errors, touched, status }) => {
                  />
                 {touched.name && errors.name &&  <p className="error">{errors.name}</p>}
 
-                <Field 
+                <Field className="LoginTab"
                 type="text" 
                 name="email" 
                 placeholder="Email" 
@@ -46,7 +54,7 @@ const Login = ({ errors, touched, status }) => {
                 />
                 {touched.email && errors.email &&  <p className="error">{errors.email}</p>}
 
-                <Field 
+                <Field className="LoginTab"
                 type="text" 
                 name="password" 
                 placeholder="Password" 
@@ -54,16 +62,8 @@ const Login = ({ errors, touched, status }) => {
                 />
                 {touched.password && errors.password &&  <p className="error">{errors.password}</p>}
 
-                <button>Sign in.</button>
-            </Form>
-            
-            {/* {user.map(users =>(
-               <ul key={users.id}>
-                   <li>Name:{users.name}</li>
-                   <li>Email:{users.email}</li>
-                   <li>Password:{users.password}</li>
-               </ul>
-           ))}         */}
+                <button className="login-btn">Log in</button>
+            </StyledForm>
         </div>
     );
 };

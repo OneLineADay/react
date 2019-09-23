@@ -10,5 +10,7 @@ export const StyledContainer = styled.div`
     padding: 0.5rem;
     border: 1px solid grey;
     border-radius: 3px;
+    margin-top:3px;
+    margin-bottom:3px;
   }
 `;
