@@ -1,27 +1,62 @@
 import React, { useState, useEffect } from "react";
-import { withFormik, Form, Field, validateYupSchema } from "formik";
+import { withFormik, Form, Field, validateYupSchema } from 'formik';
 import * as Yup from "yup";
 import axios from "axios";
 
+const initialState = {
+    name: "",
+    email: "",
+    password: ""
+}
+
 const Login = ({ errors, touched, status }) => {
     const [user, setUser] = useState([]);
+    const [values, setValues] = React.useState(initialState);
+
     useEffect(() => {
       if (status) {
         setUser([...user, status]);
       }
     }, [status]);
 
+
+    const onChange = e => {
+        setValues({
+          ...values,
+          [e.target.name]: e.target.value
+        });
+      };
+
     return(
         <div>
             <Form>
-                <Field type="text" name="name" placeholder="Name" />
+                <Field
+                 type="text" 
+                 name="name" 
+                 placeholder="Name" 
+                 onChange = {onChange}
+                 />
                 {touched.name && errors.name &&  <p className="error">{errors.name}</p>}
-                <Field type="text" name="email" placeholder="Email" />
+
+                <Field 
+                type="text" 
+                name="email" 
+                placeholder="Email" 
+                onChange = {onChange}
+                />
                 {touched.email && errors.email &&  <p className="error">{errors.email}</p>}
-                <Field type="text" name="password" placeholder="Password" />
+
+                <Field 
+                type="text" 
+                name="password" 
+                placeholder="Password" 
+                onChange = {onChange}
+                />
                 {touched.password && errors.password &&  <p className="error">{errors.password}</p>}
+
                 <button>Sign in.</button>
             </Form>
+            
             {/* {user.map(users =>(
                <ul key={users.id}>
                    <li>Name:{users.name}</li>
