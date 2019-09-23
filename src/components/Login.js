@@ -17,7 +17,7 @@ const Login = ({ errors, touched, status }) => {
     if (status) {
       setUser([...user, status]);
     }
-  }, [status]);
+  }, [status, user]);
 
   const onChange = e => {
     setValues({
