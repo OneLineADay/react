@@ -3,11 +3,13 @@ import { BrowserRouter as Router, Route, Link, Switch } from "react-router-dom";
 import logo from "./logo.svg";
 import "./App.css";
 import { Signup } from "./containers/Signup";
+import Login from './components/Login';
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
+        <Login />
         <img src={logo} className="App-logo" alt="logo" />
         <p>
           Edit <code>src/App.js</code> and save to reload.
