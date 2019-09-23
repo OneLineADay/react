@@ -1,4 +1,5 @@
 import React from "react";
+import { BrowserRouter as Router, Route, Link, Switch } from "react-router-dom";
 import logo from "./logo.svg";
 import "./App.css";
 import { Signup } from "./containers/Signup";
@@ -21,6 +22,12 @@ function App() {
         </a>
         <Signup />
       </header>
+      <Router>
+        <Switch>
+          <Route exact path="/" />
+          <Route path="/protected" />
+        </Switch>
+      </Router>
     </div>
   );
 }
