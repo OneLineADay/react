@@ -1,6 +1,7 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import logo from "./logo.svg";
+import "./App.css";
+import { Signup } from "./containers/Signup";
 
 function App() {
   return (
@@ -17,8 +18,8 @@ function App() {
           rel="noopener noreferrer"
         >
           TEST
-          
         </a>
+        <Signup />
       </header>
     </div>
   );

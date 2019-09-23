@@ -1,3 +1,5 @@
 import React from "react";
 
-export const Input = props => <input {...props} />;
+export const Input = ({ type = "text", ...otherProps }) => (
+  <input type={type} {...otherProps} />
+);
