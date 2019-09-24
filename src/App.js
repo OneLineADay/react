@@ -12,14 +12,15 @@ function App() {
     <div className="App">
       <Router>
         <Navigation />
-        <h2>Log in</h2>
-        <Login />
+        {/* <h2>Log in</h2> */}
+        {/* <Login /> */}
 
-        <h2>Sign up</h2>
-        <Signup />
+        {/* <h2>Sign up</h2> */}
+        {/* <Signup /> */}
 
         <Switch>
-          <Route exact path="/" />
+          <Route path="/login" component={Login} />
+          <Route path="/signup" component={Signup} />
           <Route path="/protected" />
         </Switch>
       </Router>

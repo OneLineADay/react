@@ -1,19 +1,43 @@
 import {
-    SIGNUP_FETCHING,
-    SIGNUP_SUCCESS,
-    SIGNUP_FAILURE
-} from '../actions'
+    FETCHING_USER_START,
+    FETCHING_USER_SUCCESS,
+    FETCHING_USER_FAILURE
+} from '../actions';
 
-export const initialState = {}
-
-
-
-export const reducer = (state = initialState, action) =>{
-
-    switch(action.type){
-
+export const initialState = {
+    user: '',
+    entries: [],
+    isFetching: false,
+    error: ''
+};
 
 
-        default: return state;
+
+export const reducer = (state = initialState, action) => {
+    switch (action.type) {
+      case FETCHING_USER_START:
+        return {
+          ...state,
+          isFetching: true,
+          error: ""
+        };
+
+      case FETCHING_USER_SUCCESS:
+        return {
+          ...state,
+          isFetching: false,
+            
+        };
+
+        case FETCHING_USER_FAILURE: 
+        return{
+            ...state,
+            isFetching: false,
+            error: action.payload
+        }
+
+      default:
+        return state;
     }
-} 
+  };
+  

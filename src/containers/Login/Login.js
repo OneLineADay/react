@@ -51,6 +51,7 @@ const Login = ({ errors, touched, status }) => {
 
     return (
         <StyledContainer>
+           <h1>Log In</h1>
             <div>
                 <Form onSubmit={logIn}>
                     <Field
