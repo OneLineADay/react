@@ -2,10 +2,11 @@ import React from "react";
 import { BrowserRouter as Router, Route, Link, Switch } from "react-router-dom";
 import "./App.css";
 import { Signup } from "./containers/Signup";
-// import { Login } from './containers/Login';
+// import { Login } from './containers/Login';S
 import Login from './containers/Login/Login';
 import createStore from 'redux';
 import { Navigation } from './containers/Navigation/Navigation';
+import Entries from "./containers/Entries/Entries"
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
           <Route path="/protected" />
         </Switch>
       </Router>
+      <Entries />
     </div>
   );
 }
