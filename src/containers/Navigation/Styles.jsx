@@ -31,6 +31,10 @@ export const StyledContainer = styled.div`
         display: flex;
         margin: auto;
         font-size: 1.5rem;
+        &:hover{
+          color: gray;
+          cursor: pointer;
+        }
       }
   }
 `;
