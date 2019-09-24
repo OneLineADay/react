@@ -10,6 +10,7 @@ export const StyledContainer = styled.div`
   height: 80px;
   font-family: 'Cutive Mono', monospace;
   background: #f2c94c;
+ 
   /* align-items: center; */
 
   .nav-logo {
@@ -31,6 +32,7 @@ export const StyledContainer = styled.div`
         display: flex;
         margin: auto;
         font-size: 1.5rem;
+        text-decoration: none;
         &:hover{
           color: gray;
           cursor: pointer;
