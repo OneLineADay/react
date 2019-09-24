@@ -1,0 +1,13 @@
+// import axios from 'axios'
+
+export const SIGNUP_FETCHING = 'SIGNUP_FETCHING'
+export const SIGNUP_SUCCESS = 'SIGNUP_SUCCESS'
+export const SIGNUP_FAILURE = 'SIGNUP_FAILURE'
+
+export const LOGIN_FETCHING = 'LOGIN_FETCHING'
+export const LOGIN_SUCCESS = 'LOGIN_SUCCESS'
+export const LOGIN_FAILURE = 'LOGIN_FAILURE'
+
+export const USER_FETCHING = 'USER_FETCHING'
+export const USER_SUCCESS = 'USER_SUCCESS'
+export const USER_FAILURE = 'USER_FAILURE'
