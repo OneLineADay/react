@@ -20,6 +20,7 @@ export const Signup = props => {
 
   return (
     <StyledContainer>
+      <h1>Sign Up</h1>
       <Input
         name="name"
         placeholder="Your name"
