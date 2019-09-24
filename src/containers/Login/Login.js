@@ -4,6 +4,7 @@ import * as Yup from "yup";
 import axios from "axios";
 import { StyledContainer } from "./Styles";
 
+
 const initialState = {
     name: "",
     email: "",
@@ -28,10 +29,31 @@ const Login = ({ errors, touched, status }) => {
         });
     };
 
+    const logIn = e => {
+        e.preventDefault();
+        axios
+            .post('https://diy-tracker.herokuapp.com/login', `grant_type=password&username=${this.state.credentials.username}&password=${this.state.credentials.password}`, {
+
+                headers: {
+                    Authorization: `Basic ${btoa('lambda-client:lambda-secret')}`,
+                    'Content-Type': 'application/x-www-form-urlencoded'
+
+                }
+            })
+            .then(res => {
+                console.log('token response:', res);
+                localStorage.setItem('token', res.data.access_token);
+                this.props.history.push('/');
+            })
+            .catch(err => console.log(err));
+    };
+
+
     return (
         <StyledContainer>
+           <h1>Log In</h1>
             <div>
-                <Form>
+                <Form onSubmit={logIn}>
                     <Field
                         type="text"
                         name="name"
