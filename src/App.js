@@ -8,15 +8,16 @@ import { Navigation } from "./containers/Navigation/Navigation";
 function App() {
   return (
     <div className="App">
-      <Navigation />
-      <header className="App-header">
-        <h2>Log in</h2>
-        <Login />
-
-        <h2>Sign up</h2>
-        <Signup />
-      </header>
       <Router>
+        <Navigation />
+        <header className="App-header">
+          <h2>Log in</h2>
+          <Login />
+
+          <h2>Sign up</h2>
+          <Signup />
+        </header>
+
         <Switch>
           <Route exact path="/" />
           <Route path="/protected" />
