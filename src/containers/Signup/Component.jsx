@@ -40,6 +40,8 @@ export const Signup = props => {
         onChange={onChange}
         placeholder="Your password"
       />
+
+      <button>Sign up</button>
     </StyledContainer>
   );
 };
