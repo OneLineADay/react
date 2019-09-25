@@ -4,9 +4,17 @@ import {
     FETCHING_USER_FAILURE
 } from '../actions';
 
+
 export const initialState = {
     user: '',
-    entries: [],
+    entries: [
+    'This is a test',
+    'This is a test',
+    'This is a test',
+    'This is a test',
+    'This is a test',
+    'This is a test',
+    'This is a test'],
     isFetching: false,
     error: ''
 };
