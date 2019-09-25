@@ -6,6 +6,7 @@ import Login from "./containers/Login/Login";
 import { Navigation } from "./containers/Navigation/Navigation";
 import Entries from "./containers/Entries/Entries";
 import { EntryForm } from "./containers/EntryForm/EntryForm";
+import Calendar from "./components/Calendar/Calender";
 
 function App() {
   return (
@@ -26,6 +27,7 @@ function App() {
         </Switch>
       </Router>
       <Entries />
+      <Calendar />
     </div>
   );
 }
