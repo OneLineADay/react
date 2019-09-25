@@ -8,10 +8,11 @@ function Entries(){
 
     useEffect(() =>{
         axios
-        .get(`https://pokeapi.co/api/v2`)
+        .get(`https://api.kanye.rest`)
         .then(res =>{
-            setAbility(res.ability);
-            setCharacteristic(res.characteristic);
+            console.log('Got pokes', res)
+            setAbility(res.data.quote);
+            // setCharacteristic(res.characteristic);
         })
         
         .catch(err =>{
