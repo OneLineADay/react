@@ -1,33 +1,29 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import EntriesCard from "./EntriesCard";
+import { connect } from 'react-redux';
 
-function Entries(){
-    const [ability, setAbility] = useState();
-    const [characteristic, setCharacteristic] = useState();
+function Entries(props) {
+    // const [ability, setAbility] = useState();
+    // const [characteristic, setCharacteristic] = useState();
 
-    useEffect(() =>{
-        axios
-        .get(`https://api.kanye.rest`)
-        .then(res =>{
-            console.log('Got pokes', res)
-            setAbility(res.data.quote);
-            // setCharacteristic(res.characteristic);
-        })
-        
-        .catch(err =>{
-            console.log("welp...", err)
-        })
-    },[])
+    console.log('Store entries', props.entryList)
 
-    return(
+    return (
         <div>
-            <EntriesCard 
-            ability = {ability}
-            characteristic = {characteristic}
-            />
+            {props.entryList.map(item => (
+                    <EntriesCard text={`${item}`} />
+                ))}
+
         </div>
     );
 }
 
-export default Entries; 
+
+const mapStateToProps = state => {
+    return {
+        entryList: state.entries
+    }
+}
+
+export default connect(mapStateToProps, {})(Entries);
