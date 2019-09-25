@@ -115,6 +115,6 @@ const FormikLogin = withFormik({
             .catch(err => console.log(err.res))
     }
 })(Login);
-console.log(FormikLogin);
+// console.log(FormikLogin);
 export default FormikLogin;
 
