@@ -6,7 +6,9 @@ export const Navigation = () => {
     <StyledContainer>
       <div className="nav-logo">Logo</div>
       <div className="nav-options">
-        <a className="nav-item">New Entry</a>
+        <NavLink to="/newentry">
+          <a className="nav-item">New Entry</a>
+        </NavLink>
         <NavLink to="/entries">
           <a className="nav-item">Past Entries </a>
         </NavLink>

@@ -5,6 +5,7 @@ import Signup from "./containers/Signup/Signup";
 import Login from "./containers/Login/Login";
 import { Navigation } from "./containers/Navigation/Navigation";
 import Entries from "./containers/Entries/Entries";
+import { EntryForm } from "./containers/EntryForm/EntryForm";
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
           <Route path="/login" component={Login} />
           <Route path="/signup" component={Signup} />
           <Route path="/entries" component={Entries} />
+          <Route path="/newentry" component={EntryForm} />
         </Switch>
       </Router>
       <Entries />
