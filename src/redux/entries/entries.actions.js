@@ -7,12 +7,32 @@ export const EntryTypes = {
   EDIT_ENTRY_FAIL: "CREATE_ENTRY_FAIL"
 };
 
-export const createEntry = entry => ({
+export const createEntryRequest = entry => ({
   action: EntryTypes.CREATE_ENTRY_REQUEST,
   payload: entry
 });
 
-export const editEntry = entry => ({
+export const createEntrySuccess = entry => ({
+  action: EntryTypes.CREATE_ENTRY_SUCCESS,
+  payload: entry
+});
+
+export const createEntryFail = error => ({
+  action: EntryTypes.CREATE_ENTRY_FAIL,
+  payload: error
+});
+
+export const editEntryRequest = entry => ({
   action: EntryTypes.EDIT_ENTRY_REQUEST,
   payload: entry
+});
+
+export const editEntrySuccess = entry => ({
+  action: EntryTypes.EDIT_ENTRY_SUCCESS,
+  payload: entry
+});
+
+export const editEntryFail = error => ({
+  action: EntryTypes.EDIT_ENTRY_FAIL,
+  payload: error
 });
