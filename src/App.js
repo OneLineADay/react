@@ -6,7 +6,8 @@ import Login from "./containers/Login/Login";
 import { Navigation } from "./containers/Navigation/Navigation";
 import Entries from "./containers/Entries/Entries";
 import { EntryForm } from "./containers/EntryForm/EntryForm";
-import Calendar from "./components/Calendar/Calender";
+import Calendar from "./containers/Calendar/Calender";
+import FormikCalendarForm from "./containers/CalendarForm/CalendarForm";
 
 function App() {
   return (
@@ -20,9 +21,10 @@ function App() {
         {/* <Signup /> */}
 
         <Switch>
-          <Route path="/login" component={Login} />
+          <Route exact path="/login" component={Login} />
           <Route path="/signup" component={Signup} />
           <Route path="/entries" component={Entries} />
+          <Route exact path="/newentry" component={FormikCalendarForm} />
           <Route path="/newentry" component={EntryForm} />
         </Switch>
       </Router>

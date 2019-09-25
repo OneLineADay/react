@@ -1,5 +1,6 @@
 import React from "react";
 import ReactCalendar from "react-calendar";
+import styled from "styled-components";
 
 const Calendar = () => {
   const today = new Date();

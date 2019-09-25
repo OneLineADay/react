@@ -4,6 +4,8 @@ import { NavLink } from 'react-router-dom';
 import { postEntryAC } from '../../redux/actions/index';
 import { tsPropertySignature } from '@babel/types';
 import { connect } from 'react-redux';
+import styled from "styled-components";
+import "./EntryForm.css"
 
 // C:\Users\tyler\Documents\github\OneLineADay\react-app\src\redux\actions\index.js
 
@@ -46,7 +48,7 @@ export const EntryForm = (props) => {
 
 
     return (
-        <div className='entry-form-container'>
+        <StyledDiv className='entry-form-container'>
             <h1>Add an Entry</h1>
             <form onSubmit={handleSubmit} className='entry-form'>
 
@@ -58,14 +60,23 @@ export const EntryForm = (props) => {
                     onChange={changeHandler}
                     
                 />
-                <button
+                <button className="submitBtn"
                     type='submit'
                 >Submit</button>
 
             </form>
-        </div>
+        </StyledDiv>
     );
 }
+
+const StyledDiv = styled.div`
+border: 1px solid black;
+width: 50%;
+margin-left: 40%;
+display:flex;
+align-items:center;
+
+`
 
 const mapStateToProps = state => {
     return {

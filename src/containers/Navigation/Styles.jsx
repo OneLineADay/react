@@ -9,7 +9,7 @@ export const StyledContainer = styled.div`
   align-content: center;
   height: 80px;
   font-family: 'Cutive Mono', monospace;
-  background: #f2c94c;
+  background: white;
  
   /* align-items: center; */
 
