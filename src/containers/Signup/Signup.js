@@ -26,7 +26,7 @@ class Signup extends React.Component {
   login = e => {
     e.preventDefault();
     axios
-      .post('https://olad-backend.herokuapp.com/user', this.state.credentials)
+      .post('https://olad-backend.herokuapp.com/createnewuser', this.state.credentials)
       .then(res => {
         console.log('Add User:', res);
         this.props.history.push('/login');

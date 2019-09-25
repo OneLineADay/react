@@ -39,6 +39,8 @@ export const EntryForm = (props) => {
     const handleSubmit = (e) => {
         e.preventDefault();
         console.log('entry to be posted', entry)
+        console.log('EntryAC',postEntryAC)
+
         props.postEntryAC(entry)
     }
 
