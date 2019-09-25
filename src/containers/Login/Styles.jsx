@@ -1,4 +1,5 @@
-import styled from "styled-components";
+import styled from 'styled-components';
+
 
 export const FormContainer = styled.div`
   height: 50vh;
@@ -25,6 +26,6 @@ justify-content:center;
 align-items:center;
 `;
 
-export const Input1 =styled.input`
+export const Input =styled.input`
 border-radius: 5px;
 `;
