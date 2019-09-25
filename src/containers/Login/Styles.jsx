@@ -2,8 +2,8 @@ import styled from 'styled-components';
 
 
 export const FormContainer = styled.div`
-  height: 50vh;
-  width:35vw;
+  height: 30vh;
+  width:15vw;
   background-color: #f2c94c;
   display:flex;
   align-items:center;

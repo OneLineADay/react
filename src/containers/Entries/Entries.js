@@ -11,9 +11,9 @@ function Entries(props) {
 
     return (
         <div>
-            {props.entryList.map(item => (
+            {/* {props.entryList.map(item => (
                     <EntriesCard text={`${item}`} />
-                ))}
+                ))} */}
         </div>
     );
 }
