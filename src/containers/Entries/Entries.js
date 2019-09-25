@@ -14,11 +14,9 @@ function Entries(props) {
             {props.entryList.map(item => (
                     <EntriesCard text={`${item}`} />
                 ))}
-
         </div>
     );
 }
-
 
 const mapStateToProps = state => {
     return {
