@@ -38,7 +38,7 @@ export const EntryForm = props => {
         <textarea
           type="text"
           name="entryText"
-          placeholder="What Happened today?"
+          // placeholder="What Happened today?"
           rows="3"
           onChange={changeHandler}
         />
