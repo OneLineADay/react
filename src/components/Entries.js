@@ -13,8 +13,8 @@ const StyledContainer = styled.div`
 const Entries = ({ entries }) => {
   return (
     <StyledContainer>
-      {entries.map(({ id, ...rest }) => (
-        <Entry key={id} {...rest} />
+      {entries.map(({ entryid, ...rest }) => (
+        <Entry key={entryid} {...rest} />
       ))}
     </StyledContainer>
   );

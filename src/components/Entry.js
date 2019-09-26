@@ -6,9 +6,9 @@ const StyledCard = styled.div`
   border-radius: 2px;
 `;
 
-const Entry = ({ text, date }) => (
+const Entry = ({ text, entrydate }) => (
   <StyledCard>
-    <span>{date}</span>
+    <span>{entrydate}</span>
     <p>{text}</p>
   </StyledCard>
 );
