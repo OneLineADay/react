@@ -3,9 +3,7 @@ import Calendar from "react-calendar";
 import { connect } from "react-redux";
 import { fetchEntriesRequest } from "redux/entries/entries.actions";
 import { Navigation } from "containers/Navigation/Navigation";
-import Entries from "containers/Entries/Entries";
-import EntriesCard from "containers/Entries/EntriesCard";
-import EntryForm from "containers/EntryForm/EntryForm";
+import Entries from "components/Entries";
 import { StyledBody } from "pages/DashboardStyles";
 
 const Dashboard = ({ fetchEntries }) => {
@@ -27,14 +25,8 @@ const Dashboard = ({ fetchEntries }) => {
     <StyledBody>
       <Navigation />
       <div>
-
         <div>
           <Calendar value={date} onChange={onDateChange} />
-        </div>
-
-        <div>
-          <EntriesCard />
-          <EntryForm />
         </div>
 
         <Entries />

@@ -14,11 +14,8 @@ export const login = (username, password) =>
     }
   );
 
-export const signin = (username, password) =>
-  axios.post("/user/login", { username, password });
-
-export const signUp = (username, email, password) =>
-  axios.post("/createnewuser", { username, email, password });
+export const signUp = (username, useremail, password) =>
+  axios.post("/createnewuser", { username, useremail, password });
 
 export const createEntry = details => axios.post("/entries", details);
 
