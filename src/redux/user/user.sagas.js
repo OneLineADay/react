@@ -7,7 +7,7 @@ import {
   signInSuccess,
   signUpSuccess
 } from "./user.actions";
-import { login, signUp } from "../../utils";
+import { login, signUp } from "utils";
 
 function* signUpRequestAsync({ payload }) {
   const { username, email, password } = payload;
