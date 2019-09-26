@@ -8,7 +8,6 @@ import Entry from "components/Entry";
 const StyledContainer = styled.div`
   display: flex;
   flex-direction: column;
-  padding: 1rem;
 `;
 
 const Entries = ({ entries }) => {
