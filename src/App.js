@@ -1,9 +1,9 @@
 import React from "react";
 import { Route, Switch } from "react-router-dom";
-import Signup from "./pages/Signup";
-import Login from "./pages/Login";
-import Dashboard from "./pages/Dashboard";
-import PrivateRoute from "./components/PrivateRoute";
+import Signup from "pages/Signup";
+import Login from "pages/Login";
+import Dashboard from "pages/Dashboard";
+import PrivateRoute from "components/PrivateRoute";
 
 function App() {
   return (

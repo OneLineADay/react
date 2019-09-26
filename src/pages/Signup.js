@@ -2,8 +2,8 @@ import React, { useEffect } from "react";
 import { connect } from "react-redux";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
-import { signUpRequest } from "../redux/user/user.actions";
-import { StyledContainer } from "../utils/styles.utils";
+import { signUpRequest } from "redux/user/user.actions";
+import { StyledContainer } from "utils/styles.utils";
 
 const Signup = ({ signup }) => {
   const handleSubmit = values => {

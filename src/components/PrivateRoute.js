@@ -2,7 +2,7 @@ import React from "react";
 import { Route, Redirect } from "react-router-dom";
 import { connect } from "react-redux";
 import { createStructuredSelector } from "reselect";
-import { selectToken } from "../redux/user/user.selectors";
+import { selectToken } from "redux/user/user.selectors";
 
 const PrivateRoute = ({ token, component: Component, ...rest }) => {
   return (

@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import Calendar from "react-calendar";
 import { connect } from "react-redux";
-import Entries from "../components/Entries";
+import Entries from "components/Entries";
 
 const Dashboard = () => {
   const today = new Date();
