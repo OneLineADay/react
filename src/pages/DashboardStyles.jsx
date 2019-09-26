@@ -1,12 +1,11 @@
 import styled from "styled-components";
 
 export const StyledBody = styled.div`
-    background: #f2c94c;
-    width: 100vw;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
+  background: #f2c94c;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 `
 export const StyledContainer = styled.div`
     border: 1px solid green;
@@ -37,4 +36,3 @@ export const EntryFormDiv = styled.div`
 export const EntryCardDiv = styled.div`
     border: 1px solid red;
 `
-
