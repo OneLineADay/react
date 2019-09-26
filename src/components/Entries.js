@@ -65,9 +65,9 @@ const Entries = ({ entries }) => {
     <div>
     <TopText>Entries:</TopText>
     <StyledContainer>
-      <EntryForm />
-      {entries.map(({ id, ...rest }) => (
-        <Entry key={id} {...rest} />
+      <EntryForm/>
+      {entries.map(({ entryid, ...rest }) => (
+        <Entry key={entryid} {...rest} />
       ))}
     </StyledContainer>
     </div>

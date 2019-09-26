@@ -8,9 +8,9 @@ const StyledCard = styled.div`
   background: white;
 `;
 
-const Entry = ({ text, date }) => (
+const Entry = ({ text, entrydate }) => (
   <StyledCard>
-    <span>{date}</span>
+    <span>{entrydate}</span>
     <p>{text}</p>
   </StyledCard>
 );
