@@ -6,7 +6,7 @@ import { Navigation } from "containers/Navigation/Navigation";
 import Entries from "containers/Entries/Entries";
 import EntriesCard from "containers/Entries/EntriesCard";
 import EntryForm from "containers/EntryForm/EntryForm";
-import { StyledBody } from "pages/DashboardStyles";
+import { StyledBody, CalDiv, StyledContainer, EntryCardDiv, EntryFormDiv, EntryDiv } from "pages/DashboardStyles";
 
 const Dashboard = ({ fetchEntries }) => {
   const today = new Date();
@@ -24,21 +24,31 @@ const Dashboard = ({ fetchEntries }) => {
   useEffect(setTitle, []);
 
   return (
+    
     <StyledBody>
-      <Navigation />
-      <div>
+      <Navigation /> {/* Nav */}
+      <StyledContainer>
 
-        <div>
-          <Calendar value={date} onChange={onDateChange} />
-        </div>
+        <CalDiv>
+          <Calendar value={date} onChange={onDateChange} /> {/* Calendar */}
+        </CalDiv>
 
-        <div>
-          <EntriesCard />
-          <EntryForm />
-        </div>
+        <Entries /> {/* Entry */}
+        
+        <EntryDiv>
+          <EntryFormDiv>
+            <EntryForm /> {/* Entry Form */}
+          </EntryFormDiv>
 
-        <Entries />
-      </div>
+          <EntryCardDiv>
+            <EntriesCard /> {/* Entry Card */}
+          </EntryCardDiv>
+        </EntryDiv>
+          
+        
+
+        
+      </StyledContainer>
     </StyledBody>
   );
 };
