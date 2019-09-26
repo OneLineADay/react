@@ -50,7 +50,7 @@ function* watchFetchEntriesRequest() {
   yield takeLatest(EntryTypes.FETCH_ENTRIES_REQUEST, fetchEntriesAsync);
 }
 
-export function* entrySagas() {
+export function* entriesSagas() {
   yield all([
     call(watchCreateEntryRequest),
     call(watchEditEntryRequest),
