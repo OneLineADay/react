@@ -1,5 +1,5 @@
 import React from "react";
-import { StyledContainer } from "./Styles";
+import { StyledContainer } from "../containers/Navigation/Styles";
 import { NavLink } from "react-router-dom";
 export const Navigation = () => {
   return (
