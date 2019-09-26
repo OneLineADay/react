@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Calendar from "react-calendar";
 import { connect } from "react-redux";
 
@@ -9,6 +9,12 @@ const Dashboard = () => {
   const onDateChange = date => {
     setDate(date);
   };
+
+  const setTitle = () => {
+    document.title = "One Line A Day";
+  };
+
+  useEffect(setTitle, []);
 
   return (
     <div>

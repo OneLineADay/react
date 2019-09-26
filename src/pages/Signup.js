@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { connect } from "react-redux";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
@@ -17,6 +17,13 @@ const Signup = ({ signup }) => {
     username: Yup.string().required("Please enter username"),
     password: Yup.string().required("Please enter Password")
   });
+
+  const setTitle = () => {
+    document.title = "One Line A Day | Sign up";
+  };
+
+  useEffect(setTitle, []);
+
   return (
     <div>
       <h1>Register account!</h1>
