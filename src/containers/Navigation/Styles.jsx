@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const StyledContainer = styled.div`
   @import url("https://fonts.googleapis.com/css?family=Cutive+Mono&display=swap");
 
-border: 1px solid greenyellow;
+
   display: flex;
   justify-content: space-between;
   height: 80px;
