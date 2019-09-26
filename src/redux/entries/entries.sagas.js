@@ -4,9 +4,11 @@ import {
   createEntryFail,
   editEntryFail,
   createEntrySuccess,
-  editEntrySuccess
+  editEntrySuccess,
+  fetchEntriesFail,
+  fetchEntriesSuccess
 } from "./entries.actions";
-import { createEntry, editEntry } from "../api";
+import { createEntry, editEntry, fetchEntries } from "../api";
 
 function* createEntryAsyc({ payload }) {
   try {
@@ -32,6 +34,19 @@ function* editEntryAsync({ payload }) {
 
 function* watchEditEntryRequest() {
   yield takeLatest(EntryTypes.EDIT_ENTRY_REQUEST, editEntryAsync);
+}
+
+function* fetchEntriesAsync({ payload }) {
+  try {
+    const data = yield fetchEntries(payload);
+    yield put(fetchEntriesSuccess(data));
+  } catch (error) {
+    yield put(fetchEntriesFail(error));
+  }
+}
+
+function* watchFetchEntriesRequest() {
+  yield takeLatest(EntryTypes.FETCH_ENTRIES_REQUEST, fetchEntriesAsync);
 }
 
 export function* entrySagas() {
