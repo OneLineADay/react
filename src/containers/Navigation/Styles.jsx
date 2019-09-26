@@ -7,7 +7,7 @@ export const StyledContainer = styled.div`
   display: flex;
   justify-content: space-around;
   align-content: center;
-  height: 80px;
+  height: 120px;
   font-family: 'Cutive Mono', monospace;
   background: white;
   width: 100%;
@@ -24,7 +24,7 @@ export const StyledContainer = styled.div`
 
   .nav-options{
       display: flex;
-      width: 55%;
+      width: 40%;
       justify-content: space-between;
       margin-right: 5%;
       
