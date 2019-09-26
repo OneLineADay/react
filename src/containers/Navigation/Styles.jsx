@@ -16,7 +16,7 @@ export const StyledContainer = styled.div`
 
   .nav-options {
     display: flex;
-    padding-right: 1rem;
+    padding-right: 2rem;
     flex-direction: row;
     align-items: center;
     font-size: 1.5rem;
