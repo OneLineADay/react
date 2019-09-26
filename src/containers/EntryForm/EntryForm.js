@@ -50,6 +50,10 @@ export const EntryForm = (props) => {
                 <button
                     type='submit'
                 >Submit</button>
+                <button  
+                >Edit</button>
+                <button   
+                >Delete</button>
 
             </form>
         </div>

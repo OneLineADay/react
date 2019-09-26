@@ -24,7 +24,7 @@ export const StyledContainer = styled.div`
 
   .nav-options{
       display: flex;
-      width: 40%;
+      width: 55%;
       justify-content: space-between;
       margin-right: 5%;
       
