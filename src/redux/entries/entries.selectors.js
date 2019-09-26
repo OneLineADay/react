@@ -2,7 +2,7 @@ import { createSelector } from "reselect";
 
 const selectEntries = state => state.entries;
 
-export const selectEntryObjects = createSelector(
+export const selectEntriesList = createSelector(
   [selectEntries],
   entries => entries.entries
 );
