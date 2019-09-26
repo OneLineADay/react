@@ -8,9 +8,9 @@ export const UserTypes = {
   SIGN_OUT_REQUEST: "SIGN_OUT_REQUEST"
 };
 
-export const signUpRequest = (name, email, password) => ({
+export const signUpRequest = (username, email, password) => ({
   type: UserTypes.SIGN_UP_REQUEST,
-  payload: { email, name, password }
+  payload: { email, username, password }
 });
 
 export const signUpSuccess = token => ({
@@ -23,9 +23,9 @@ export const signUpFail = error => ({
   payload: error
 });
 
-export const signInRequest = (email, password) => ({
+export const signInRequest = (username, password) => ({
   type: UserTypes.SIGN_IN_REQUEST,
-  payload: { email, password }
+  payload: { username, password }
 });
 
 export const signInSuccess = token => ({

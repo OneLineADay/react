@@ -1,9 +1,18 @@
 import { all, takeLatest, put, call } from "redux-saga/effects";
 
-import { UserTypes, signUpFail, signInFail } from "./user.actions";
+import {
+  UserTypes,
+  signUpFail,
+  signInFail,
+  signInSuccess,
+  signUpSuccess
+} from "./user.actions";
+import { login, signUp } from "../../utils";
 
 function* signUpRequestAsync({ payload }) {
   try {
+    const { data } = yield signUp(payload);
+    yield put(signUpSuccess(data.access_token));
   } catch (error) {
     yield put(signUpFail(error));
   }
@@ -14,7 +23,10 @@ function* watchSignUpRequest() {
 }
 
 function* signInRequestAsync({ payload }) {
+  const { username, password } = payload;
   try {
+    const { data } = yield login(username, password);
+    yield put(signInSuccess(data.access_token));
   } catch (error) {
     yield put(signInFail(error));
   }
