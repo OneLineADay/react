@@ -3,7 +3,7 @@ import { connect } from "react-redux";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
 import { signUpRequest } from "redux/user/user.actions";
-import { StyledContainer } from "utils/styles.utils";
+import { StyledContainer, StyledBody } from "utils/styles.utils";
 
 const Signup = ({ signup }) => {
   const handleSubmit = values => {
@@ -26,38 +26,51 @@ const Signup = ({ signup }) => {
   useEffect(setTitle, []);
 
   return (
-    <StyledContainer>
-      <h1>Register account!</h1>
-      <Formik
-        initialValues={{
-          username: "",
-          email: "",
-          password: ""
-        }}
-        validationSchema={schema}
-        onSubmit={handleSubmit}
-      >
-        {() => (
-          <Form>
-            <div>
-              <Field type="text" name="username" />
+    <StyledBody>
+      <StyledContainer>
+      <div className = 'logoDiv'>
+        <img src = 'https://i.imgur.com/YhAVgpu.png' href = ''></img>
+      </div>
+        <Formik
+          initialValues={{
+            username: "",
+            email: "",
+            password: ""
+          }}
+          validationSchema={schema}
+          onSubmit={handleSubmit}
+        >
+          {() => (
+            <Form>
+            <h1>Sign up and start making entries</h1>
+            <div className = 'inputDiv'>
+              <h3>USERNAME</h3>
+              <Field type="text" name="username" placeholder = "USERNAME"/>
               <ErrorMessage name="username" component="span" />
             </div>
-            <div>
-              <Field type="email" name="email" />
+
+            <div className = 'inputDiv'>
+              <h3>EMAIL</h3>
+              <Field type="email" name="email" placeholder = "EMAIL"/>
               <ErrorMessage name="email" component="span" />
             </div>
-            <div>
-              <Field type="password" name="password" />
+
+            <div className = 'inputDiv'>
+              <h3>PASSWORD</h3>
+              <Field type="password" name="password" placeholder = "PASSWORD"/>
               <ErrorMessage name="password" component="span" />
             </div>
             <div>
-              <button type="submit">Signup</button>
+              <button type="submit">Log In</button>
+              
             </div>
+            <h4>Already have an account? <a href = '/login'>Sign In</a> here</h4>
           </Form>
-        )}
-      </Formik>
-    </StyledContainer>
+          )}
+        </Formik>
+      </StyledContainer>
+    </StyledBody>
+
   );
 };
 

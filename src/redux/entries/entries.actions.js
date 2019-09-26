@@ -11,46 +11,46 @@ export const EntryTypes = {
 };
 
 export const createEntryRequest = entry => ({
-  action: EntryTypes.CREATE_ENTRY_REQUEST,
+  type: EntryTypes.CREATE_ENTRY_REQUEST,
   payload: entry
 });
 
 export const createEntrySuccess = entry => ({
-  action: EntryTypes.CREATE_ENTRY_SUCCESS,
+  type: EntryTypes.CREATE_ENTRY_SUCCESS,
   payload: entry
 });
 
 export const createEntryFail = error => ({
-  action: EntryTypes.CREATE_ENTRY_FAIL,
+  type: EntryTypes.CREATE_ENTRY_FAIL,
   payload: error
 });
 
 export const editEntryRequest = entry => ({
-  action: EntryTypes.EDIT_ENTRY_REQUEST,
+  type: EntryTypes.EDIT_ENTRY_REQUEST,
   payload: entry
 });
 
 export const editEntrySuccess = entry => ({
-  action: EntryTypes.EDIT_ENTRY_SUCCESS,
+  type: EntryTypes.EDIT_ENTRY_SUCCESS,
   payload: entry
 });
 
 export const editEntryFail = error => ({
-  action: EntryTypes.EDIT_ENTRY_FAIL,
+  type: EntryTypes.EDIT_ENTRY_FAIL,
   payload: error
 });
 
 export const fetchEntriesRequest = date => ({
-  action: EntryTypes.FETCH_ENTRIES_REQUEST,
+  type: EntryTypes.FETCH_ENTRIES_REQUEST,
   payload: date
 });
 
 export const fetchEntriesSuccess = entries => ({
-  action: EntryTypes.FETCH_ENTRIES_SUCCESS,
+  type: EntryTypes.FETCH_ENTRIES_SUCCESS,
   payload: entries
 });
 
 export const fetchEntriesFail = error => ({
-  action: EntryTypes.FETCH_ENTRIES_FAIL,
+  type: EntryTypes.FETCH_ENTRIES_FAIL,
   payload: error
 });

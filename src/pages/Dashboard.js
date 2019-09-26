@@ -1,18 +1,19 @@
 import React, { useEffect } from "react";
 import Calendar from "react-calendar";
 import { connect } from "react-redux";
-import Entries from "containers/Entries/Entries";
+import { fetchEntriesRequest } from "redux/entries/entries.actions";
 import { Navigation } from "containers/Navigation/Navigation";
+import Entries from "containers/Entries/Entries";
 import EntriesCard from "containers/Entries/EntriesCard";
 import EntryForm from "containers/EntryForm/EntryForm";
-import { StyledBody } from "utils/styles.utils";
+import { StyledBody } from "pages/DashboardStyles";
 
-const Dashboard = () => {
+const Dashboard = ({ fetchEntries }) => {
   const today = new Date();
   const [date, setDate] = React.useState(today);
-  const entries = [];
 
   const onDateChange = date => {
+    fetchEntries(date);
     setDate(date);
   };
 
@@ -23,16 +24,30 @@ const Dashboard = () => {
   useEffect(setTitle, []);
 
   return (
-    <div>
+    <StyledBody>
       <Navigation />
-      <Entries entries={entries} />
-      <EntriesCard />
-      <EntryForm />
-      <Calendar value={date} onChange={onDateChange} />
-      <Entries entries={entries} />
-      
-    </div>
+      <div>
+
+        <div>
+          <Calendar value={date} onChange={onDateChange} />
+        </div>
+
+        <div>
+          <EntriesCard />
+          <EntryForm />
+        </div>
+
+        <Entries />
+      </div>
+    </StyledBody>
   );
 };
 
-export default connect()(Dashboard);
+const mapDispatchToProps = dispatch => ({
+  fetchEntries: date => dispatch(fetchEntriesRequest(date))
+});
+
+export default connect(
+  null,
+  mapDispatchToProps
+)(Dashboard);

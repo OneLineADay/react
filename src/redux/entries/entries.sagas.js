@@ -38,6 +38,7 @@ function* watchEditEntryRequest() {
 
 function* fetchEntriesAsync({ payload }) {
   const date = formatDate(payload);
+  yield console.log(date);
   try {
     const data = yield fetchEntries(date);
     yield put(fetchEntriesSuccess(data));

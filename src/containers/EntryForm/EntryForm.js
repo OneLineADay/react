@@ -16,17 +16,6 @@ export const EntryForm = (props) => {
     const [entry, setEntry] = useState(initialState);
 
 
-    // const { match, movies } = props;
-    // useEffect(() => {
-    //     const id = match.params.id;
-    //     const movieToUpdate = movies.find(item => `${item.id}` === id);
-    //     if (movieToUpdate) {
-    //         console.log('Updating Movie:', movieToUpdate);
-    //         setMovie(movieToUpdate);
-    //     }
-    // }, [match, movies]);
-
-
     const changeHandler = (ev) => {
         ev.persist();
         let value = ev.target.value;
