@@ -12,9 +12,10 @@ const StyledCard = styled.div`
   border-right: 4px solid #55ccf2;
   border-left: none;
   border-top: none;
-  margin-top: 15px;
+  /* margin-top: 15px; */
   height: 7vh;
-  width: 65%;
+  width: 70%;
+ margin-top: 1rem;
 
   span{
     font-size: 1.5rem;
@@ -23,12 +24,26 @@ const StyledCard = styled.div`
   p{
     font-size: 1.2rem;
   }
+
+  .date{
+    width: 25%;
+    padding-left: 1rem;
+  }
+  .text{
+    width: 75%;
+    
+  }
 `;
 
 const Entry = ({ text, entrydate }) => (
   <StyledCard>
-    <span>{entrydate}</span>
-    <p>{text}</p>
+    <div className='date'>
+      <span>{entrydate}</span>
+    </div>
+    <div className='text'>
+      <p>{text}</p>
+    </div>
+
   </StyledCard>
 );
 
