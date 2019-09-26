@@ -6,7 +6,8 @@ import { signUpRequest } from "../redux/user/user.actions";
 
 const Signup = ({ signup }) => {
   const handleSubmit = values => {
-    signup(values);
+    const { username, email, password } = values;
+    signup(username, email, password);
   };
 
   const schema = Yup.object().shape({
@@ -18,7 +19,7 @@ const Signup = ({ signup }) => {
   });
   return (
     <div>
-      <h1>Login to your account!</h1>
+      <h1>Register account!</h1>
       <Formik
         initialValues={{
           username: "",
@@ -47,7 +48,8 @@ const Signup = ({ signup }) => {
 };
 
 const mapDispatchToProps = dispatch => ({
-  signup: values => dispatch(signUpRequest(values))
+  signup: (username, email, password) =>
+    dispatch(signUpRequest(username, email, password))
 });
 
 export default connect(

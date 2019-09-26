@@ -10,8 +10,9 @@ import {
 import { login, signUp } from "../../utils";
 
 function* signUpRequestAsync({ payload }) {
+  const { username, email, password } = payload;
   try {
-    const { data } = yield signUp(payload);
+    const { data } = yield signUp(username, email, password);
     yield put(signUpSuccess(data.access_token));
   } catch (error) {
     yield put(signUpFail(error));

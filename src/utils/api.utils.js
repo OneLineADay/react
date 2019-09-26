@@ -1,12 +1,8 @@
-import _ from "axios";
+import axios from "axios";
 import { selectToken } from "../redux/user/user.selectors";
+console.log(selectToken);
 
-const axios = _.create({
-  baseUrl: "https://olad-backend.herokuapp.com",
-  headers: {
-    Authorization: selectToken
-  }
-});
+axios.defaults.baseURL = "https://olad-backend.herokuapp.com";
 
 export const login = (username, password) =>
   axios.get(
@@ -20,7 +16,8 @@ export const login = (username, password) =>
     }
   );
 
-export const signUp = details => axios.post("/user", details);
+export const signUp = (username, email, password) =>
+  axios.post("/user", (username, email, password));
 
 export const createEntry = details => axios.post("/entries", details);
 
