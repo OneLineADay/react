@@ -32,22 +32,28 @@ const StyledContainer = styled.div`
     .buttonDiv{
       display: flex;
       width: 60%;
-      justify-content: space-around;
-      margin: auto;
+      justify-content: flex-start;
+      /* margin: auto; */
       margin-bottom: 2rem;
 
       button{
         /* padding: 0.8rem; */
-        width: 10%;
+        width: 16%;
         border-radius: 5px;
         border: none;
         box-shadow: 5px 5px #4f4f4f;
         height: 30px;
         align-content: center;
-        margin: auto;
+        /* margin: auto; */
+        margin: 0 1rem 0 1rem;
         background: #55ccf2;
         font-family: 'Cutive Mono', monospace;
         font-size: 1.2rem;
+
+        &:hover{
+          background: #4f4f4f;
+          box-shadow: 5px 5px black;
+        }
       }
     }
   }
