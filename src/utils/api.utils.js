@@ -1,7 +1,11 @@
 import _ from "axios";
+import { selectToken } from "../redux/user/user.selectors";
 
 const axios = _.create({
-  baseUrl: "https://olad-backend.herokuapp.com"
+  baseUrl: "https://olad-backend.herokuapp.com",
+  headers: {
+    Authorization: selectToken
+  }
 });
 
 export const login = (username, password) =>
