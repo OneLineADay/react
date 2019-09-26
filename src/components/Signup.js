@@ -2,15 +2,17 @@ import React from "react";
 import { connect } from "react-redux";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
-import { signInRequest } from "../redux/user/user.actions";
+import { signUpRequest } from "../redux/user/user.actions";
 
-const Login = ({ login }) => {
+const Signup = ({ signup }) => {
   const handleSubmit = values => {
-    const { username, password } = values;
-    login(username, password);
+    signup(values);
   };
 
   const schema = Yup.object().shape({
+    email: Yup.string()
+      .email("Please enter a valid email")
+      .required("Please enter email"),
     username: Yup.string().required("Please enter username"),
     password: Yup.string().required("Please enter Password")
   });
@@ -20,6 +22,7 @@ const Login = ({ login }) => {
       <Formik
         initialValues={{
           username: "",
+          email: "",
           password: ""
         }}
         validationSchema={schema}
@@ -29,6 +32,8 @@ const Login = ({ login }) => {
           <Form>
             <Field type="text" name="username" />
             <ErrorMessage name="username" component="div" />
+            <Field type="email" name="email" />
+            <ErrorMessage name="email" component="div" />
             <Field type="password" name="password" />
             <ErrorMessage name="password" component="div" />
             <button type="submit" disabled={isSubmitting}>
@@ -42,10 +47,10 @@ const Login = ({ login }) => {
 };
 
 const mapDispatchToProps = dispatch => ({
-  login: (username, password) => dispatch(signInRequest(username, password))
+  signup: values => dispatch(signUpRequest(values))
 });
 
 export default connect(
   null,
   mapDispatchToProps
-)(Login);
+)(Signup);

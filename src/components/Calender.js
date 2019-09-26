@@ -7,10 +7,6 @@ const Calendar = () => {
 
   const onDateChange = date => {
     setDate(date);
-    const day = date.getDate();
-    const month = date.getMonth() + 1;
-    const year = date.getFullYear();
-    console.log(`${day}-${month}-${year}`);
   };
 
   return <ReactCalendar value={date} onChange={onDateChange} />;

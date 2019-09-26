@@ -16,7 +16,7 @@ export const userReducer = (state = INITIAL_STATE, action) => {
     case UserTypes.SIGN_UP_FAIL:
       return {
         ...state,
-        error: action.payload
+        error: action.payload.message
       };
     case UserTypes.SIGN_IN_SUCCESS:
       return {
@@ -27,7 +27,7 @@ export const userReducer = (state = INITIAL_STATE, action) => {
     case UserTypes.SIGN_IN_FAIL:
       return {
         ...state,
-        error: action.payload
+        error: action.payload.message
       };
     case UserTypes.SIGN_OUT_REQUEST:
       return INITIAL_STATE;

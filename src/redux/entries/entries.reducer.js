@@ -24,7 +24,7 @@ export const entriesReducer = (state = INITIAL_STATE, action) => {
       return {
         ...state,
         isFetching: false,
-        error: action.payload
+        error: action.message
       };
     case EntryTypes.EDIT_ENTRY_REQUEST:
       return {
@@ -42,7 +42,7 @@ export const entriesReducer = (state = INITIAL_STATE, action) => {
       return {
         ...state,
         isFetching: false,
-        error: action.payload
+        error: action.payload.message
       };
     case EntryTypes.FETCH_ENTRIES_REQUEST:
       return {
@@ -60,7 +60,7 @@ export const entriesReducer = (state = INITIAL_STATE, action) => {
       return {
         ...state,
         isFetching: false,
-        error: action.payload
+        error: action.payload.message
       };
     default:
       return state;

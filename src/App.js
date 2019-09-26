@@ -1,11 +1,11 @@
 import React from "react";
 import { Route, Switch } from "react-router-dom";
 import "./App.css";
-import Signup from "./containers/Signup/Signup";
-import Login from "./containers/Login/Login";
+import Signup from "./components/Signup";
+import Login from "./components/Login";
 import { Navigation } from "./containers/Navigation/Navigation";
 import PrivateRoute from "./components/PrivateRoute";
-import Calendar from "./components/Calendar/Calender";
+import Calendar from "./components/Calender";
 
 function App() {
   return (
