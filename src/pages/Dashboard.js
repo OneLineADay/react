@@ -21,6 +21,10 @@ const Dashboard = ({ fetchEntries }) => {
 
   useEffect(setTitle, []);
 
+  useEffect(() => {
+    fetchEntries(date);
+  });
+
   return (
     <StyledBody>
       <Navigation />

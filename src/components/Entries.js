@@ -4,39 +4,38 @@ import styled from "styled-components";
 import { createStructuredSelector } from "reselect";
 import { selectEntriesList } from "redux/entries/entries.selectors";
 import Entry from "components/Entry";
-import EntryForm from '../containers/EntryForm/EntryForm';
+import EntryForm from "../containers/EntryForm/EntryForm";
 
 const StyledContainer = styled.div`
-@import url('https://fonts.googleapis.com/css?family=Cutive+Mono|Encode+Sans+Semi+Condensed&display=swap');
+  @import url("https://fonts.googleapis.com/css?family=Cutive+Mono|Encode+Sans+Semi+Condensed&display=swap");
 
   display: flex;
   flex-direction: column;
-  padding: 2rem;
   background: #ffe9a4;
-  margin: 2rem;
+  padding: 1rem 2rem;
   align-content: space-around;
-  
-  .entry-form-container{
+
+  .entry-form-container {
     display: flex;
     justify-content: center;
     flex-direction: column;
     /* margin-left: 25%; */
-    textarea{
+    textarea {
       width: 70%;
       border-radius: 7px;
-      margin-bottom: .8rem;
+      margin-bottom: 0.8rem;
     }
-    h3{
-      font-family: 'Cutive Mono', monospace;
+    h3 {
+      font-family: "Cutive Mono", monospace;
     }
-    .buttonDiv{
+    .buttonDiv {
       display: flex;
       width: 60%;
       justify-content: flex-start;
       /* margin: auto; */
       margin-bottom: 2rem;
 
-      button{
+      button {
         /* padding: 0.8rem; */
         width: 16%;
         border-radius: 5px;
@@ -47,10 +46,10 @@ const StyledContainer = styled.div`
         /* margin: auto; */
         margin: 0 1rem 0 1rem;
         background: #55ccf2;
-        font-family: 'Cutive Mono', monospace;
+        font-family: "Cutive Mono", monospace;
         font-size: 1.2rem;
 
-        &:hover{
+        &:hover {
           background: #4f4f4f;
           box-shadow: 5px 5px black;
         }
@@ -59,25 +58,23 @@ const StyledContainer = styled.div`
   }
 `;
 
-const TopText = styled.div`
-@import url('https://fonts.googleapis.com/css?family=Cutive+Mono|Encode+Sans+Semi+Condensed&display=swap');
-font-family: 'Cutive Mono', monospace;
-margin: 2rem 2rem 0 2rem;
-font-size: 2rem;
+const TopText = styled.h2`
+  @import url("https://fonts.googleapis.com/css?family=Cutive+Mono|Encode+Sans+Semi+Condensed&display=swap");
+  font-family: "Cutive Mono", monospace;
+  font-size: 2rem;
 `;
 
 const Entries = ({ entries }) => {
   return (
     <div>
-    <TopText>Entries:</TopText>
-    <StyledContainer>
-      <EntryForm/>
-      {entries.map(({ entryid, ...rest }) => (
-        <Entry key={entryid} {...rest} />
-      ))}
-    </StyledContainer>
+      <TopText>Entries:</TopText>
+      <StyledContainer>
+        <EntryForm />
+        {entries.map(({ entryid, ...rest }) => (
+          <Entry key={entryid} {...rest} />
+        ))}
+      </StyledContainer>
     </div>
-
   );
 };
 

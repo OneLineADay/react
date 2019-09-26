@@ -1,6 +1,4 @@
 import { all, takeLatest, put, call } from "redux-saga/effects";
-import { push } from "react-router-redux";
-
 import {
   UserTypes,
   signUpFail,
@@ -16,7 +14,6 @@ function* signUpRequestAsync({ payload }) {
     const { data } = yield signUp(username, email, password);
     yield console.log("response: ", data);
     yield put(signUpSuccess(data.access_token));
-    yield call(push("/"));
   } catch (error) {
     yield put(signUpFail(error));
   }
@@ -31,7 +28,6 @@ function* signInRequestAsync({ payload }) {
   try {
     const { data } = yield login(username, password);
     yield put(signInSuccess(data.access_token));
-    yield call(push("/"));
   } catch (error) {
     yield put(signInFail(error));
   }
