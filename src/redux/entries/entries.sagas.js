@@ -50,5 +50,9 @@ function* watchFetchEntriesRequest() {
 }
 
 export function* entrySagas() {
-  yield all([call(watchCreateEntryRequest), call(watchEditEntryRequest)]);
+  yield all([
+    call(watchCreateEntryRequest),
+    call(watchEditEntryRequest),
+    call(watchFetchEntriesRequest)
+  ]);
 }
