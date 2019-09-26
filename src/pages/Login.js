@@ -3,7 +3,7 @@ import { connect } from "react-redux";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
 import { signInRequest } from "redux/user/user.actions";
-import { StyledContainer } from "utils/styles.utils";
+import { StyledContainer, StyledBody } from "utils/styles.utils";
 
 const Login = ({ login }) => {
   const handleSubmit = values => {
@@ -22,8 +22,11 @@ const Login = ({ login }) => {
 
   useEffect(setTitle, []);
   return (
+    <StyledBody>
     <StyledContainer>
-      <h1>Login to your account!</h1>
+      <div className = 'logoDiv'>
+        <img src = 'https://i.imgur.com/YhAVgpu.png' href = ''></img>
+      </div>
       <Formik
         initialValues={{
           username: "",
@@ -34,21 +37,28 @@ const Login = ({ login }) => {
       >
         {() => (
           <Form>
-            <div>
-              <Field type="text" name="username" />
+            <h1>Log in to view your entries</h1>
+            <div className = 'inputDiv'>
+              <h3>USERNAME</h3>
+              <Field type="text" name="username" placeholder = "USERNAME"/>
               <ErrorMessage name="username" component="span" />
             </div>
-            <div>
-              <Field type="password" name="password" />
+            <div className = 'inputDiv'>
+              <h3>PASSWORD</h3>
+              <Field type="password" name="password" placeholder = "PASSWORD"/>
               <ErrorMessage name="password" component="span" />
             </div>
             <div>
-              <button type="submit">Login</button>
+              <button type="submit">Log In</button>
+              
             </div>
+            <h4>Don't have an account? <a href = '/signup'>Sign Up</a> here</h4>
           </Form>
         )}
       </Formik>
     </StyledContainer>
+    </StyledBody>
+
   );
 };
 
