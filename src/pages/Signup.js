@@ -3,6 +3,7 @@ import { connect } from "react-redux";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
 import { signUpRequest } from "../redux/user/user.actions";
+import { StyledContainer } from "../utils/styles.utils";
 
 const Signup = ({ signup }) => {
   const handleSubmit = values => {
@@ -25,7 +26,7 @@ const Signup = ({ signup }) => {
   useEffect(setTitle, []);
 
   return (
-    <div>
+    <StyledContainer>
       <h1>Register account!</h1>
       <Formik
         initialValues={{
@@ -36,21 +37,27 @@ const Signup = ({ signup }) => {
         validationSchema={schema}
         onSubmit={handleSubmit}
       >
-        {({ isSubmitting }) => (
+        {() => (
           <Form>
-            <Field type="text" name="username" />
-            <ErrorMessage name="username" component="div" />
-            <Field type="email" name="email" />
-            <ErrorMessage name="email" component="div" />
-            <Field type="password" name="password" />
-            <ErrorMessage name="password" component="div" />
-            <button type="submit" disabled={isSubmitting}>
-              Submit
-            </button>
+            <div>
+              <Field type="text" name="username" />
+              <ErrorMessage name="username" component="span" />
+            </div>
+            <div>
+              <Field type="email" name="email" />
+              <ErrorMessage name="email" component="span" />
+            </div>
+            <div>
+              <Field type="password" name="password" />
+              <ErrorMessage name="password" component="span" />
+            </div>
+            <div>
+              <button type="submit">Signup</button>
+            </div>
           </Form>
         )}
       </Formik>
-    </div>
+    </StyledContainer>
   );
 };
 

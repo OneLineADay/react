@@ -1,44 +1,9 @@
 import React, { useEffect } from "react";
-import styled from "styled-components";
 import { connect } from "react-redux";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
 import { signInRequest } from "../redux/user/user.actions";
-
-const StyledContainer = styled.div`
-  max-width: 480px;
-  width: 90vw;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-
-  form {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-
-    div {
-      display: flex;
-      flex-direction: column-reverse;
-      min-width: 100%;
-      padding: 1rem 2rem;
-
-      input {
-        padding: 0.4rem;
-        border-radius: 3px;
-        outline: none;
-        margin: 1px solid grey;
-      }
-
-      button {
-        padding: 0.8rem;
-      }
-    }
-  }
-`;
+import { StyledContainer } from "../utils/styles.utils";
 
 const Login = ({ login }) => {
   const handleSubmit = values => {
