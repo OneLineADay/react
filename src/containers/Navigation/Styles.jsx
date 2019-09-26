@@ -3,6 +3,7 @@ import styled from "styled-components";
 export const StyledContainer = styled.div`
   @import url("https://fonts.googleapis.com/css?family=Cutive+Mono&display=swap");
 
+border: 1px solid greenyellow;
   display: flex;
   justify-content: space-between;
   height: 80px;
@@ -20,6 +21,7 @@ export const StyledContainer = styled.div`
     justify-content: space-between;
     align-items: center;
     padding-right: 1rem;
+    margin-right: 3rem;
 
     a {
       font-size: 1.5rem;
