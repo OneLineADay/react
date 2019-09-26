@@ -21,6 +21,7 @@ border: 1px solid greenyellow;
     justify-content: space-between;
     align-items: center;
     padding-right: 1rem;
+    margin-right: 3rem;
 
     a {
       font-size: 1.5rem;

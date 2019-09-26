@@ -3,8 +3,9 @@ import Calendar from "react-calendar";
 import { connect } from "react-redux";
 import { fetchEntriesRequest } from "redux/entries/entries.actions";
 import { Navigation } from "containers/Navigation/Navigation";
-import Entries from "containers/Entries/Entries";
-import EntriesCard from "containers/Entries/EntriesCard";
+import Entries from "../components/Entries";
+// import EntriesCard from "containers/Entries/EntriesCard";
+import Entry from '../components/Entry';
 import EntryForm from "containers/EntryForm/EntryForm";
 import { StyledBody, CalDiv, StyledContainer, EntryCardDiv, EntryFormDiv, EntryDiv } from "pages/DashboardStyles";
 
@@ -41,7 +42,7 @@ const Dashboard = ({ fetchEntries }) => {
           </EntryFormDiv>
 
           <EntryCardDiv>
-            <EntriesCard /> {/* Entry Card */}
+            <Entry /> {/* Entry Card */}
           </EntryCardDiv>
         </EntryDiv>
           
