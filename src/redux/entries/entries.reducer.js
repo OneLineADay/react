@@ -6,7 +6,7 @@ const INITIAL_STATE = {
   error: null
 };
 
-export const EntriesReducer = (state = INITIAL_STATE, action) => {
+export const entriesReducer = (state = INITIAL_STATE, action) => {
   switch (action.type) {
     case EntryTypes.CREATE_ENTRY_REQUEST:
       return {
