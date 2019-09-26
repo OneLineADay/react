@@ -1,5 +1,14 @@
 import React, { useState } from "react";
 import { connect } from "react-redux";
+// import styled from "styled-components";
+
+// const StyledForm = styled.form`
+// textarea{
+
+//   width: 100%;
+// }
+
+// `;
 
 const initialState = {
   entryText: ""
@@ -33,9 +42,12 @@ export const EntryForm = props => {
           rows="3"
           onChange={changeHandler}
         />
-        <button type="submit">Submit</button>
-        <button>Edit</button>
-        <button>Delete</button>
+        <div className='buttonDiv'>
+          <button type="submit">Submit</button>
+          <button>Edit</button>
+          <button>Delete</button>
+        </div>
+
       </form>
     </div>
   );
