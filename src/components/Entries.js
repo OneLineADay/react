@@ -22,7 +22,7 @@ const StyledContainer = styled.div`
     flex-direction: column;
     /* margin-left: 25%; */
     textarea{
-      width: 100%;
+      width: 70%;
       border-radius: 7px;
       margin-bottom: .8rem;
     }
