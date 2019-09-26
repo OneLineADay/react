@@ -4,7 +4,7 @@ import { connect } from "react-redux";
 import { fetchEntriesRequest } from "redux/entries/entries.actions";
 import { Navigation } from "containers/Navigation/Navigation";
 import Entries from "components/Entries";
-import { StyledBody } from "pages/DashboardStyles";
+import { StyledBody, StyledContainer } from "pages/DashboardStyles";
 
 const Dashboard = ({ fetchEntries }) => {
   const today = new Date();
@@ -24,13 +24,13 @@ const Dashboard = ({ fetchEntries }) => {
   return (
     <StyledBody>
       <Navigation />
-      <div>
+      <StyledContainer>
         <div>
           <Calendar value={date} onChange={onDateChange} />
         </div>
 
         <Entries />
-      </div>
+      </StyledContainer>
     </StyledBody>
   );
 };
