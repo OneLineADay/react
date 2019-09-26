@@ -8,7 +8,7 @@ import {
   fetchEntriesFail,
   fetchEntriesSuccess
 } from "./entries.actions";
-import { createEntry, editEntry, fetchEntries } from "../api";
+import { createEntry, editEntry, fetchEntries, formatDate } from "../../utils";
 
 function* createEntryAsyc({ payload }) {
   try {
@@ -37,8 +37,9 @@ function* watchEditEntryRequest() {
 }
 
 function* fetchEntriesAsync({ payload }) {
+  const date = formatDate(payload);
   try {
-    const data = yield fetchEntries(payload);
+    const data = yield fetchEntries(date);
     yield put(fetchEntriesSuccess(data));
   } catch (error) {
     yield put(fetchEntriesFail(error));

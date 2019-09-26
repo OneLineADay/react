@@ -20,6 +20,12 @@ export const EntryReducer = (state = INITIAL_STATE, action) => {
         entries: action.payload,
         error: null
       };
+    case EntryTypes.CREATE_ENTRY_FAIL:
+      return {
+        ...state,
+        isFetching: false,
+        error: action.payload
+      };
     case EntryTypes.EDIT_ENTRY_REQUEST:
       return {
         ...state,
