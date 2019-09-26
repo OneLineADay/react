@@ -2,13 +2,14 @@ import React, { useEffect } from "react";
 import Calendar from "react-calendar";
 import { connect } from "react-redux";
 import Entries from "components/Entries";
+import { fetchEntriesRequest } from "redux/entries/entries.actions";
 
-const Dashboard = () => {
+const Dashboard = ({ fetchEntries }) => {
   const today = new Date();
   const [date, setDate] = React.useState(today);
-  const entries = [];
 
   const onDateChange = date => {
+    fetchEntries(date);
     setDate(date);
   };
 
@@ -21,9 +22,16 @@ const Dashboard = () => {
   return (
     <div>
       <Calendar value={date} onChange={onDateChange} />
-      <Entries entries={entries} />
+      <Entries />
     </div>
   );
 };
 
-export default connect()(Dashboard);
+const mapDispatchToProps = dispatch => ({
+  fetchEntries: date => dispatch(fetchEntriesRequest(date))
+});
+
+export default connect(
+  null,
+  mapDispatchToProps
+)(Dashboard);
