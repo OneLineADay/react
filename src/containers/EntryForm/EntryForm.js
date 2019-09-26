@@ -33,7 +33,7 @@ export const EntryForm = props => {
 
   return (
     <div className="entry-form-container">
-      <h1>Add an Entry</h1>
+      <h3>New Entry:</h3>
       <form onSubmit={handleSubmit} className="entry-form">
         <textarea
           type="text"

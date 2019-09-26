@@ -9,7 +9,8 @@ export const StyledBody = styled.div`
 `;
 
 export const StyledContainer = styled.div`
-  padding-top: 2rem;
+  padding: 2rem 1rem;
   display: grid;
   grid-template-columns: 1fr 4fr;
+  grid-gap: 1.2rem;
 `;
