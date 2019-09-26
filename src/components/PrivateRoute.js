@@ -1,22 +1,31 @@
-import React from 'react';
-import { Route, Redirect } from 'react-router-dom';
+import React from "react";
+import { Route, Redirect } from "react-router-dom";
+import { connect } from "react-redux";
+import { createStructuredSelector } from "reselect";
+import { selectToken } from "redux/user/user.selectors";
 
-const PrivateRoute = ({ component: Component, ...rest }) => {
+const PrivateRoute = ({ token, component: Component, ...rest }) => {
   return (
     <Route
       {...rest}
-      render={() => {
-        if (localStorage.getItem('token')) {
-            console.log('User logged in')
-          // if token is in localstorage, render the given component
-          return <Component />;
-        } else {
-          return <Redirect to="/login" />;
-        }
-      }}
+      render={props =>
+        token ? (
+          <Component {...props} />
+        ) : (
+          <Redirect
+            to={{
+              pathname: "/login",
+              state: { from: props.location }
+            }}
+          />
+        )
+      }
     />
   );
 };
 
-export default PrivateRoute;
+const mapStateToProps = createStructuredSelector({
+  token: selectToken
+});
 
+export default connect(mapStateToProps)(PrivateRoute);

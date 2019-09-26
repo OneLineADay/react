@@ -4,7 +4,10 @@ export const EntryTypes = {
   CREATE_ENTRY_FAIL: "CREATE_ENTRY_FAIL",
   EDIT_ENTRY_REQUEST: "EDIT_ENTRY_REQUEST",
   EDIT_ENTRY_SUCCESS: "EDIT_ENTRY_SUCCESS",
-  EDIT_ENTRY_FAIL: "CREATE_ENTRY_FAIL"
+  EDIT_ENTRY_FAIL: "EDIT_ENTRY_FAIL",
+  FETCH_ENTRIES_REQUEST: "FETCH_ENTRIES_REQUEST",
+  FETCH_ENTRIES_SUCCESS: "FETCH_ENTRIES_SUCCESS",
+  FETCH_ENTRIES_FAIL: "FETCH_ENTRIES_FAIL"
 };
 
 export const createEntryRequest = entry => ({
@@ -34,5 +37,20 @@ export const editEntrySuccess = entry => ({
 
 export const editEntryFail = error => ({
   action: EntryTypes.EDIT_ENTRY_FAIL,
+  payload: error
+});
+
+export const fetchEntriesRequest = date => ({
+  action: EntryTypes.FETCH_ENTRIES_REQUEST,
+  payload: date
+});
+
+export const fetchEntriesSuccess = entries => ({
+  action: EntryTypes.FETCH_ENTRIES_SUCCESS,
+  payload: entries
+});
+
+export const fetchEntriesFail = error => ({
+  action: EntryTypes.FETCH_ENTRIES_FAIL,
   payload: error
 });

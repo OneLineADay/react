@@ -6,7 +6,7 @@ const INITIAL_STATE = {
   error: null
 };
 
-export const EntryReducer = (state = INITIAL_STATE, action) => {
+export const entriesReducer = (state = INITIAL_STATE, action) => {
   switch (action.type) {
     case EntryTypes.CREATE_ENTRY_REQUEST:
       return {
@@ -19,6 +19,12 @@ export const EntryReducer = (state = INITIAL_STATE, action) => {
         isFetching: false,
         entries: action.payload,
         error: null
+      };
+    case EntryTypes.CREATE_ENTRY_FAIL:
+      return {
+        ...state,
+        isFetching: false,
+        error: action.message
       };
     case EntryTypes.EDIT_ENTRY_REQUEST:
       return {
@@ -36,7 +42,25 @@ export const EntryReducer = (state = INITIAL_STATE, action) => {
       return {
         ...state,
         isFetching: false,
-        error: action.payload
+        error: action.payload.message
+      };
+    case EntryTypes.FETCH_ENTRIES_REQUEST:
+      return {
+        ...state,
+        isFetching: true
+      };
+    case EntryTypes.FETCH_ENTRIES_SUCCESS:
+      return {
+        ...state,
+        entries: action.payload,
+        isFetching: false,
+        error: null
+      };
+    case EntryTypes.FETCH_ENTRIES_FAIL:
+      return {
+        ...state,
+        isFetching: false,
+        error: action.payload.message
       };
     default:
       return state;
