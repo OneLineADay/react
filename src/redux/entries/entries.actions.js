@@ -39,3 +39,18 @@ export const editEntryFail = error => ({
   action: EntryTypes.EDIT_ENTRY_FAIL,
   payload: error
 });
+
+export const fetchEntriesRequest = date => ({
+  action: EntryTypes.FETCH_ENTRIES_REQUEST,
+  payload: date
+});
+
+export const fetchEntriesSuccess = entries => ({
+  action: EntryTypes.FETCH_ENTRIES_SUCCESS,
+  payload: entries
+});
+
+export const fetchEntriesFail = error => ({
+  action: EntryTypes.FETCH_ENTRIES_FAIL,
+  payload: error
+});
