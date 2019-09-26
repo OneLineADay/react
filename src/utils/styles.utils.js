@@ -10,12 +10,13 @@ export const StyledBody = styled.div`
 
 export const StyledContainer = styled.div`
 @import url('https://fonts.googleapis.com/css?family=Cutive+Mono|Encode+Sans+Semi+Condensed&display=swap');
-  max-width: 900px;
+  max-width: 1000px;
   width: 90vw;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  
   
   .inputDiv{
     display: flex;

@@ -4,6 +4,7 @@ import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
 import { signInRequest } from "redux/user/user.actions";
 import { StyledContainer, StyledBody } from "utils/styles.utils";
+import Logo from "../img/olad_logo.png"
 
 const Login = ({ login }) => {
   const handleSubmit = values => {
@@ -25,7 +26,7 @@ const Login = ({ login }) => {
     <StyledBody>
     <StyledContainer>
       <div className = 'logoDiv'>
-        <img src = 'https://i.imgur.com/YhAVgpu.png' href = ''></img>
+        <img src = {Logo} href = ''></img>
       </div>
       <Formik
         initialValues={{
