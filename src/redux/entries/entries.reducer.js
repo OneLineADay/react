@@ -1,7 +1,8 @@
 import { EntryTypes } from "./entries.actions";
+import { entries } from "data/entries";
 
 const INITIAL_STATE = {
-  entries: [],
+  entries,
   isFetching: false,
   error: null
 };
