@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { NavLink } from 'react-router-dom';
-import { postEntryAC } from '../../redux/actions/index';
+// import { postEntryAC } from '../../redux/actions/index';
 import { tsPropertySignature } from '@babel/types';
-import { connect } from 'react-redux';
+// import { connect } from 'react-redux';
 
 // C:\Users\tyler\Documents\github\OneLineADay\react-app\src\redux\actions\index.js
 
@@ -39,9 +39,9 @@ export const EntryForm = (props) => {
     const handleSubmit = (e) => {
         e.preventDefault();
         console.log('entry to be posted', entry)
-        console.log('EntryAC',postEntryAC)
+        // console.log('EntryAC',postEntryAC)
 
-        props.postEntryAC(entry)
+        // props.postEntryAC(entry)
     }
 
 
@@ -67,11 +67,11 @@ export const EntryForm = (props) => {
     );
 }
 
-const mapStateToProps = state => {
-    return {
-        entryList: state.entries
-    }
-}
+// const mapStateToProps = state => {
+//     return {
+//         entryList: state.entries
+//     }
+// }
 
-export default connect(mapStateToProps, {postEntryAC})(EntryForm);
+export default EntryForm;
 

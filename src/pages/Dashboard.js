@@ -1,7 +1,11 @@
 import React, { useEffect } from "react";
 import Calendar from "react-calendar";
 import { connect } from "react-redux";
-import Entries from "components/Entries";
+import Entries from "containers/Entries/Entries";
+import { Navigation } from "containers/Navigation/Navigation";
+import EntriesCard from "containers/Entries/EntriesCard";
+import EntryForm from "containers/EntryForm/EntryForm";
+import { StyledBody } from "utils/styles.utils";
 
 const Dashboard = () => {
   const today = new Date();
@@ -20,8 +24,13 @@ const Dashboard = () => {
 
   return (
     <div>
+      <Navigation />
+      <Entries entries={entries} />
+      <EntriesCard />
+      <EntryForm />
       <Calendar value={date} onChange={onDateChange} />
       <Entries entries={entries} />
+      
     </div>
   );
 };
