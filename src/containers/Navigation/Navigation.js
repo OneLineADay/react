@@ -6,7 +6,7 @@ export const Navigation = () => {
   return (
     <StyledContainer>
       <div className="nav-logo">
-        <img src = 'https://i.imgur.com/YhAVgpu.png' href = ''></img>
+        <img src="https://i.imgur.com/YhAVgpu.png" alt="" />
       </div>
       <div className="nav-options">
         <NavLink to="/newentry">New Entry</NavLink>

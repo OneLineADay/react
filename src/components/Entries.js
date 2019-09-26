@@ -1,16 +1,23 @@
 import React from "react";
 import { connect } from "react-redux";
+import styled from "styled-components";
 import { createStructuredSelector } from "reselect";
 import { selectEntriesList } from "redux/entries/entries.selectors";
 import Entry from "components/Entry";
 
+const StyledContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+`;
+
 const Entries = ({ entries }) => {
   return (
-    <div>
+    <StyledContainer>
       {entries.map(({ id, ...rest }) => (
         <Entry key={id} {...rest} />
       ))}
-    </div>
+    </StyledContainer>
   );
 };
 
