@@ -13,6 +13,7 @@ function* signUpRequestAsync({ payload }) {
   const { username, email, password } = payload;
   try {
     const { data } = yield signUp(username, email, password);
+    yield console.log("response: ", data);
     yield put(signUpSuccess(data.access_token));
   } catch (error) {
     yield put(signUpFail(error));

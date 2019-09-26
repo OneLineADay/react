@@ -3,7 +3,7 @@ import axios from "axios";
 axios.defaults.baseURL = "https://olad-backend.herokuapp.com";
 
 export const login = (username, password) =>
-  axios.get(
+  axios.post(
     "/login",
     `grant_type=password&username=${username}&password=${password}`,
     {
@@ -14,11 +14,8 @@ export const login = (username, password) =>
     }
   );
 
-export const signin = (username, password) =>
-  axios.post("/user/login", { username, password });
-
-export const signUp = (username, email, password) =>
-  axios.post("/createnewuser", { username, email, password });
+export const signUp = (username, useremail, password) =>
+  axios.post("/createnewuser", { username, useremail, password });
 
 export const createEntry = details => axios.post("/entries", details);
 
