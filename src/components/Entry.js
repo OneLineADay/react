@@ -16,7 +16,7 @@ const StyledCard = styled.div`
   height: 7vh;
   width: 65%;
 
-  h3{
+  span{
     font-size: 1.5rem;
   }
 
@@ -25,9 +25,9 @@ const StyledCard = styled.div`
   }
 `;
 
-const Entry = ({ text, date }) => (
+const Entry = ({ text, entrydate }) => (
   <StyledCard>
-    <h3>{date}</h3>
+    <span>{entrydate}</span>
     <p>{text}</p>
   </StyledCard>
 );
