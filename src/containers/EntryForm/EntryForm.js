@@ -1,5 +1,8 @@
 import React, { useState } from "react";
 import { connect } from "react-redux";
+import axios from'axios';
+
+import {addEntry} from '../../data/entries';
 // import styled from "styled-components";
 
 // const StyledForm = styled.form`
@@ -11,7 +14,7 @@ import { connect } from "react-redux";
 // `;
 
 const initialState = {
-  entryText: ""
+  text: ""
 };
 
 export const EntryForm = props => {
@@ -29,7 +32,36 @@ export const EntryForm = props => {
   const handleSubmit = e => {
     e.preventDefault();
     console.log("entry to be posted", entry);
+    addEntry(entry);
+    
+
+    // axios
+    // .post(
+    //   "https://olad-backend.herokuapp.com/entry",entry,
+    //   {
+    //     headers: {
+    //       Authorization: `Basic ${btoa("lambda-client:lambda-secret")}`,
+    //       "Content-Type": "application/x-www-form-urlencoded"
+    //     }
+    //   }
+    // )
+
+
+
+    // axios.post(`https://olad-backend.herokuapp.com/entry`, entry)
+    // .then(res=>{
+    //   console.log('Post response',res);
+    // })
   };
+
+  // const handleEdit = e =>{
+  //   e.preventDefault();
+  //   console.log("entry to be posted", entry);
+  //   axios.put(`https://olad-backend.herokuapp.com/entry`, entry)
+  //   .then(res=>{
+  //     console.log('Post response',res);
+  //   })
+  // }
 
   return (
     <div className="entry-form-container">
@@ -37,10 +69,11 @@ export const EntryForm = props => {
       <form onSubmit={handleSubmit} className="entry-form">
         <textarea
           type="text"
-          name="entryText"
+          name="text"
           // placeholder="What Happened today?"
           rows="3"
           onChange={changeHandler}
+          value = {props.entryList}
         />
         <div className='buttonDiv'>
           <button type="submit">Submit</button>
@@ -53,10 +86,10 @@ export const EntryForm = props => {
   );
 };
 
-// const mapStateToProps = state => {
-//     return {
-//         entryList: state.entries
-//     }
-// }
+const mapStateToProps = state => {
+    return {
+        entryList: state.entries
+    }
+}
 
 export default connect()(EntryForm);
