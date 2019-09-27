@@ -1,6 +1,5 @@
 import axios from "axios";
 import {store} from 'redux/store';
-// const token = store.getState().user.token;
 
 axios.defaults.baseURL = "https://olad-backend.herokuapp.com";
 axios.interceptors.request.use(config => {
