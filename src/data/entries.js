@@ -67,5 +67,5 @@ export const addEntry = (entry) => {
     }
 
     
-  );console.log('New set if ents', entries)
+  );console.log('New set of ents', entries)
 }

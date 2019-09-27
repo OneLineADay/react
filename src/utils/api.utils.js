@@ -15,9 +15,24 @@ export const login = (username, password) =>
   );
 
 export const signUp = (username, useremail, password) =>
-  axios.post("/createnewuser", { username, useremail, password });
+  axios.post("/createnewuser", { username, useremail, password },
+    {
+      headers: {
+        Authorization: `Basic ${btoa("lambda-client:lambda-secret")}`,
+        "Content-Type": "application/json"
+      }
+    }
 
-export const createEntry = details => axios.post("/entries", details);
+  );
+
+export const createEntry = details => axios.post("/entries", details,
+  // {
+  //   headers: {
+  //     Authorization: `Basic ${btoa("lambda-client:lambda-secret")}`,
+  //     "Content-Type": "application/json"
+  //   }
+  // }
+);
 
 export const editEntry = details => axios.patch("/entries", details);
 

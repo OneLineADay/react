@@ -35,17 +35,14 @@ export const EntryForm = props => {
     addEntry(entry);
     
 
-    // axios
-    // .post(
-    //   "https://olad-backend.herokuapp.com/entry",entry,
-    //   {
-    //     headers: {
-    //       Authorization: `Basic ${btoa("lambda-client:lambda-secret")}`,
-    //       "Content-Type": "application/x-www-form-urlencoded"
-    //     }
-    //   }
-    // )
-
+ axios.post("/entries", entry,
+    {
+      headers: {
+        Authorization: `Bearer ${btoa("lambda-client:lambda-secret")}`,
+        "Content-Type": "application/json"
+      }
+    }
+  );
 
 
     // axios.post(`https://olad-backend.herokuapp.com/entry`, entry)
@@ -77,8 +74,8 @@ export const EntryForm = props => {
         />
         <div className='buttonDiv'>
           <button type="submit">Submit</button>
-          <button>Edit</button>
-          <button>Delete</button>
+          <button type = 'button' >Edit</button>
+          <button type = 'button' >Delete</button>
         </div>
 
       </form>
