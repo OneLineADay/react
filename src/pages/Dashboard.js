@@ -3,7 +3,7 @@ import Calendar from "react-calendar";
 import { connect } from "react-redux";
 import { fetchEntriesRequest } from "redux/entries/entries.actions";
 import Navigation from "containers/Navigation";
-import Entries from "components/Entries";
+import Entries from "containers/Entries";
 import { StyledBody, StyledContainer } from "pages/DashboardStyles";
 
 const Dashboard = ({ fetchEntries }) => {
