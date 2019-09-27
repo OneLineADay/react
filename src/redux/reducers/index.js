@@ -33,6 +33,7 @@ export const reducer = (state = initialState, action) => {
       case FETCHING_USER_SUCCESS:
         return {
           ...state,
+          
           isFetching: false,
             
         };

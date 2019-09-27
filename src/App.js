@@ -7,6 +7,7 @@ import { Navigation } from "./containers/Navigation/Navigation";
 import Entries from "./containers/Entries/Entries";
 import { EntryForm } from "./containers/EntryForm/EntryForm";
 import Calendar from "./components/Calendar/Calender";
+import {Dashboard} from './containers/Dashboard/Dashboard';
 
 function App() {
   return (
@@ -20,10 +21,11 @@ function App() {
         {/* <Signup /> */}
 
         <Switch>
+          <Route exact path='/protected' component={Dashboard} />
           <Route path="/login" component={Login} />
           <Route path="/signup" component={Signup} />
           <Route path="/entries" component={Entries} />
-          <Route path="/newentry" component={EntryForm} />
+          {/* <Route path="/newentry" component={EntryForm} /> */}
         </Switch>
       </Router>
       <Entries />

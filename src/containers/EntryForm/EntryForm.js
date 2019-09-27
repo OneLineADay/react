@@ -4,6 +4,7 @@ import { NavLink } from 'react-router-dom';
 import { postEntryAC } from '../../redux/actions/index';
 import { tsPropertySignature } from '@babel/types';
 import { connect } from 'react-redux';
+import { axiosWithAuth } from '../../utils/axiosWithAuth';
 
 // C:\Users\tyler\Documents\github\OneLineADay\react-app\src\redux\actions\index.js
 
@@ -15,6 +16,20 @@ export const EntryForm = (props) => {
 
     const [entry, setEntry] = useState(initialState);
 
+    const getData = (e) =>{
+      e.preventDefault()
+      axiosWithAuth()
+      .get('/entries',
+     { headers: {
+        Authorization: `Bearer ${localStorage.getItem('token')}`}
+    }
+      )
+      .then(res=>{
+        console.log('Response', res)
+      })
+      .catch(err=>{
+        console.log(err)})
+    }
 
     // const { match, movies } = props;
     // useEffect(() => {
@@ -46,7 +61,7 @@ export const EntryForm = (props) => {
     return (
         <div className='entry-form-container'>
             <h1>Add an Entry</h1>
-            <form onSubmit={handleSubmit} className='entry-form'>
+            <form onSubmit={getData} className='entry-form'>
 
                 <textarea
                     type='text'
@@ -58,7 +73,9 @@ export const EntryForm = (props) => {
                 />
                 <button
                     type='submit'
-                >Submit</button>
+                >Get</button>
+
+                <button onClick = {handleSubmit}>Post</button>
 
             </form>
         </div>

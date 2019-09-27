@@ -1,4 +1,5 @@
 import Axios from "axios";
+import { axiosWithAuth } from '../../utils/axiosWithAuth';
 
 export const FETCHING_USER_START = "FETCHING_USER_START";
 export const FETCHING_USER_SUCCESS = "FETCHING_USER_SUCCESS";
@@ -24,12 +25,17 @@ export const getUserAC = (index) => dispatch => {
 export const postEntryAC = (entry) => dispatch => {
     dispatch({ type: POST_ENTRY });
     console.log('Posting entry:', entry)
-    Axios
-        .post(`https://olad-backend.herokuapp.com/entry`, entry)
+    axiosWithAuth()
+        .post(`/entry`, entry,
+            {
+                headers: {
+                    Authorization: `Bearer ${localStorage.getItem('token')}`
+                }
+            })
         .then(res => {
-            dispatch({ type: FETCHING_USER_SUCCESS, payload: res.data });
+            console.log(res);
         })
         .catch(err => {
-            dispatch({ type: FETCHING_USER_FAILURE, payload: err });
+            console.log(err);
         });
 };
