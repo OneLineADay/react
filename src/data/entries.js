@@ -1,3 +1,4 @@
+
 export const entries = [
   {
     entryid: 0,
@@ -50,3 +51,21 @@ export const entries = [
     text: "The supper dummy day"
   }
 ];
+
+const newEntry = {
+  entryid: (entries.length +1),
+  entrydate: `24-10-2019`,
+  text: ''
+}
+
+export const addEntry = (entry) => {
+  console.log('Adding entry:', entry);
+  entries.push(
+    {
+      ...newEntry,
+      text: entry.text
+    }
+
+    
+  );console.log('New set if ents', entries)
+}

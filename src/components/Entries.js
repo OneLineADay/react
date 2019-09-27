@@ -5,6 +5,7 @@ import { createStructuredSelector } from "reselect";
 import { selectEntriesList } from "redux/entries/entries.selectors";
 import Entry from "components/Entry";
 import EntryForm from '../containers/EntryForm/EntryForm';
+import axios from 'axios';
 
 const StyledContainer = styled.div`
 @import url('https://fonts.googleapis.com/css?family=Cutive+Mono|Encode+Sans+Semi+Condensed&display=swap');
@@ -67,6 +68,19 @@ font-size: 2rem;
 `;
 
 const Entries = ({ entries }) => {
+
+
+  console.log('Entries');
+
+  // axios.get(`https://olad-backend.herokuapp.com/entries`)
+  // .then(res=>{
+  //   console.log('Response',res.data.entries)
+  //   .catch(err=>{
+  //     console.log(err);
+  //   })
+  // },[])
+
+
   return (
     <div>
     <TopText>Entries:</TopText>

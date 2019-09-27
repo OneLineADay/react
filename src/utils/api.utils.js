@@ -22,3 +22,5 @@ export const createEntry = details => axios.post("/entries", details);
 export const editEntry = details => axios.patch("/entries", details);
 
 export const fetchEntries = date => axios.get(`/entries/?date=${date}`);
+
+export const deleteEntries = date => axios.delete(`/entries/?date=${date}`);

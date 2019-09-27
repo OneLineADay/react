@@ -7,7 +7,10 @@ export const EntryTypes = {
   EDIT_ENTRY_FAIL: "EDIT_ENTRY_FAIL",
   FETCH_ENTRIES_REQUEST: "FETCH_ENTRIES_REQUEST",
   FETCH_ENTRIES_SUCCESS: "FETCH_ENTRIES_SUCCESS",
-  FETCH_ENTRIES_FAIL: "FETCH_ENTRIES_FAIL"
+  FETCH_ENTRIES_FAIL: "FETCH_ENTRIES_FAIL",
+  DELETE_ENTRIES_REQUEST: "DELETE_ENTRIES_REQUEST",
+  DELETE_ENTRIES_SUCCESS: "DELETE_ENTRIES_SUCCESS",
+  DELETE_ENTRIES_FAIL: "DELETE_ENTRIES_FAIL"
 };
 
 export const createEntryRequest = entry => ({
@@ -38,6 +41,21 @@ export const editEntrySuccess = entry => ({
 export const editEntryFail = error => ({
   type: EntryTypes.EDIT_ENTRY_FAIL,
   payload: error
+});
+
+export const deleteEntriesRequest = date =>({
+  type: EntryTypes.DELETE_ENTRIES_REQUEST,
+  payload: date
+});
+
+export const deleteEntriesSuccess = date =>({
+  type: EntryTypes.DELETE_ENTRIES_SUCCESS,
+  payload: date
+});
+
+export const deleteEntriesFail = date =>({
+  type: EntryTypes.DELETE_ENTRIES_FAIL,
+  payload: date
 });
 
 export const fetchEntriesRequest = date => ({
