@@ -15,10 +15,15 @@ if (process.env.NODE_ENV === "development") {
   middlewares.push(logger);
 }
 
-export const store = createStore(
+const getStore = () =>{
+  const store = createStore(
   rootReducer,
   composeWithDevTools(applyMiddleware(...middlewares))
 );
+return store;
+}
+
+export const store = getStore();
 
 export const persistor = persistStore(store);
 

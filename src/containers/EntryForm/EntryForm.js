@@ -1,67 +1,19 @@
 import React, { useState } from "react";
 import { connect } from "react-redux";
-import axios from'axios';
+import {createEntryRequest} from 'redux/entries/entries.actions';
 
-import {addEntry} from '../../data/entries';
-// import styled from "styled-components";
-
-// const StyledForm = styled.form`
-// textarea{
-
-//   width: 100%;
-// }
-
-// `;
-
-const initialState = {
-  text: ""
-};
 
 export const EntryForm = props => {
-  const [entry, setEntry] = useState(initialState);
+  const [entry, setEntry] = useState('');
 
-  const changeHandler = ev => {
-    ev.persist();
-    let value = ev.target.value;
-    setEntry({
-      ...entry,
-      [ev.target.name]: value
-    });
+  const changeHandler = e => {
+    setEntry(e.target.value);
   };
 
-  const handleSubmit = e => {
+  const handleSubmit = (e) => {
     e.preventDefault();
-    console.log("entry to be posted", entry);
-    addEntry(entry);
-    
-
-    // axios
-    // .post(
-    //   "https://olad-backend.herokuapp.com/entry",entry,
-    //   {
-    //     headers: {
-    //       Authorization: `Basic ${btoa("lambda-client:lambda-secret")}`,
-    //       "Content-Type": "application/x-www-form-urlencoded"
-    //     }
-    //   }
-    // )
-
-
-
-    // axios.post(`https://olad-backend.herokuapp.com/entry`, entry)
-    // .then(res=>{
-    //   console.log('Post response',res);
-    // })
-  };
-
-  // const handleEdit = e =>{
-  //   e.preventDefault();
-  //   console.log("entry to be posted", entry);
-  //   axios.put(`https://olad-backend.herokuapp.com/entry`, entry)
-  //   .then(res=>{
-  //     console.log('Post response',res);
-  //   })
-  // }
+    props.createEntry({text: entry});
+  }
 
   return (
     <div className="entry-form-container">
@@ -72,8 +24,8 @@ export const EntryForm = props => {
           name="text"
           // placeholder="What Happened today?"
           rows="3"
+          value={entry}
           onChange={changeHandler}
-          value = {props.entryList}
         />
         <div className='buttonDiv'>
           <button type="submit">Submit</button>
@@ -86,10 +38,8 @@ export const EntryForm = props => {
   );
 };
 
-const mapStateToProps = state => {
-    return {
-        entryList: state.entries
-    }
-}
+const mapDispatchToProps = dispatch => ({
+  createEntry: text => dispatch(createEntryRequest(text))
+});
 
-export default connect()(EntryForm);
+export default connect(null, mapDispatchToProps)(EntryForm);

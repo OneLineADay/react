@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import Calendar from "react-calendar";
 import { connect } from "react-redux";
 import { fetchEntriesRequest } from "redux/entries/entries.actions";
-import { Navigation } from "containers/Navigation/Navigation";
+import Navigation from "containers/Navigation/Navigation";
 import Entries from "components/Entries";
 import { StyledBody, StyledContainer } from "pages/DashboardStyles";
 
@@ -20,6 +20,10 @@ const Dashboard = ({ fetchEntries }) => {
   };
 
   useEffect(setTitle, []);
+
+  useEffect(() => {
+    fetchEntries(date);
+  });
 
   return (
     <StyledBody>

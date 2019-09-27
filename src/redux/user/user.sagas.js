@@ -1,5 +1,4 @@
 import { all, takeLatest, put, call } from "redux-saga/effects";
-
 import {
   UserTypes,
   signUpFail,
@@ -13,7 +12,6 @@ function* signUpRequestAsync({ payload }) {
   const { username, email, password } = payload;
   try {
     const { data } = yield signUp(username, email, password);
-    yield console.log("response: ", data);
     yield put(signUpSuccess(data.access_token));
   } catch (error) {
     yield put(signUpFail(error));
