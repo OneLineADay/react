@@ -1,6 +1,6 @@
 import React from "react";
 import { connect } from "react-redux";
-import { StyledContainer } from "containers/Navigation/Styles";
+import { StyledContainer } from "containers/NavigationStyles";
 import { signOutRequest } from "redux/user/user.actions";
 
 const Navigation = ({ logout }) => {

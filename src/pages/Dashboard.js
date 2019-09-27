@@ -2,8 +2,8 @@ import React, { useEffect } from "react";
 import Calendar from "react-calendar";
 import { connect } from "react-redux";
 import { fetchEntriesRequest } from "redux/entries/entries.actions";
-import Navigation from "containers/Navigation/Navigation";
-import Entries from "components/Entries";
+import Navigation from "containers/Navigation";
+import Entries from "containers/Entries";
 import { StyledBody, StyledContainer } from "pages/DashboardStyles";
 
 const Dashboard = ({ fetchEntries }) => {
