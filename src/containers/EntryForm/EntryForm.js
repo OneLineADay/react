@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { connect } from "react-redux";
 import {createEntryRequest} from 'redux/entries/entries.actions';
 
+
 export const EntryForm = props => {
   const [entry, setEntry] = useState('');
 
@@ -12,7 +13,7 @@ export const EntryForm = props => {
   const handleSubmit = (e) => {
     e.preventDefault();
     props.createEntry({text: entry});
-  };
+  }
 
   return (
     <div className="entry-form-container">
@@ -20,7 +21,7 @@ export const EntryForm = props => {
       <form onSubmit={handleSubmit} className="entry-form">
         <textarea
           type="text"
-          name="entryText"
+          name="text"
           // placeholder="What Happened today?"
           rows="3"
           value={entry}
@@ -37,13 +38,8 @@ export const EntryForm = props => {
   );
 };
 
-// const mapStateToProps = state => {
-//     return {
-//         entryList: state.entries
-//     }
-// }
 const mapDispatchToProps = dispatch => ({
   createEntry: text => dispatch(createEntryRequest(text))
-})
+});
 
 export default connect(null, mapDispatchToProps)(EntryForm);

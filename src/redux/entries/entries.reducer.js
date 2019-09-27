@@ -45,6 +45,23 @@ export const entriesReducer = (state = INITIAL_STATE, action) => {
         isFetching: false,
         error: action.payload.message
       };
+
+    case EntryTypes.DELETE_ENTRIES_REQUEST:
+      return {
+        ...state,
+        isFetching: true,
+      }
+    case EntryTypes.DELETE_ENTRIES_SUCCESS:
+      return {
+        ...state,
+        isFetching: false,
+      }
+    case EntryTypes.DELETE_ENTRIES_FAIL:
+      return {
+        ...state,
+        isFetching: false,
+        error: action.payload.message
+      }
     case EntryTypes.FETCH_ENTRIES_REQUEST:
       return {
         ...state,

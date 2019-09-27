@@ -65,6 +65,19 @@ const TopText = styled.h2`
 `;
 
 const Entries = ({ entries }) => {
+
+
+  console.log('Entries');
+
+  // axios.get(`https://olad-backend.herokuapp.com/entries`)
+  // .then(res=>{
+  //   console.log('Response',res.data.entries)
+  //   .catch(err=>{
+  //     console.log(err);
+  //   })
+  // },[])
+
+
   return (
     <div>
       <TopText>Entries:</TopText>
