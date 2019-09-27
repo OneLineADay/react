@@ -1,13 +1,13 @@
 import axios from "axios";
-// import { store } from "redux/store";
+import { store } from "redux/store";
 
 axios.defaults.baseURL = "https://olad-backend.herokuapp.com";
-// axios.interceptors.request.use(config => {
-//     const token = store.getState().user.token;
-//     config.headers['Authorization'] =  token ? `Bearer ${token}` : '';
+axios.interceptors.request.use(config => {
+  const token = store.getState().user.token;
+  config.headers["Authorization"] = token ? `Bearer ${token}` : "";
 
-//     return config;
-// });
+  return config;
+});
 
 export const login = (username, password) =>
   axios.post(
