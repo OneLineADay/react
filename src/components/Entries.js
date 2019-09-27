@@ -4,7 +4,7 @@ import styled from "styled-components";
 import { createStructuredSelector } from "reselect";
 import { selectEntriesList } from "redux/entries/entries.selectors";
 import Entry from "components/Entry";
-import EntryForm from "containers/EntryForm/EntryForm";
+import EntryForm from "components/EntryForm";
 
 const StyledContainer = styled.div`
   @import url("https://fonts.googleapis.com/css?family=Cutive+Mono|Encode+Sans+Semi+Condensed&display=swap");
@@ -14,48 +14,7 @@ const StyledContainer = styled.div`
   background: #ffe9a4;
   padding: 1rem 2rem;
   align-content: space-around;
-
-  .entry-form-container {
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    /* margin-left: 25%; */
-    textarea {
-      width: 70%;
-      border-radius: 7px;
-      margin-bottom: 0.8rem;
-    }
-    h3 {
-      font-family: "Cutive Mono", monospace;
-    }
-    .buttonDiv {
-      display: flex;
-      width: 60%;
-      justify-content: flex-start;
-      /* margin: auto; */
-      margin-bottom: 2rem;
-
-      button {
-        /* padding: 0.8rem; */
-        width: 16%;
-        border-radius: 5px;
-        border: none;
-        box-shadow: 5px 5px #4f4f4f;
-        height: 30px;
-        align-content: center;
-        /* margin: auto; */
-        margin: 0 1rem 0 1rem;
-        background: #55ccf2;
-        font-family: "Cutive Mono", monospace;
-        font-size: 1.2rem;
-
-        &:hover {
-          background: #4f4f4f;
-          box-shadow: 5px 5px black;
-        }
-      }
-    }
-  }
+  /* overflow-y: scroll; */
 `;
 
 const TopText = styled.h2`
@@ -65,19 +24,6 @@ const TopText = styled.h2`
 `;
 
 const Entries = ({ entries }) => {
-
-
-  console.log('Entries');
-
-  // axios.get(`https://olad-backend.herokuapp.com/entries`)
-  // .then(res=>{
-  //   console.log('Response',res.data.entries)
-  //   .catch(err=>{
-  //     console.log(err);
-  //   })
-  // },[])
-
-
   return (
     <div>
       <TopText>Entries:</TopText>
@@ -90,8 +36,6 @@ const Entries = ({ entries }) => {
     </div>
   );
 };
-
-
 
 const mapStateToProps = createStructuredSelector({
   entries: selectEntriesList
