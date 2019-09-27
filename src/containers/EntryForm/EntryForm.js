@@ -1,34 +1,17 @@
 import React, { useState } from "react";
 import { connect } from "react-redux";
-// import styled from "styled-components";
-
-// const StyledForm = styled.form`
-// textarea{
-
-//   width: 100%;
-// }
-
-// `;
-
-const initialState = {
-  entryText: ""
-};
+import {createEntryRequest} from 'redux/entries/entries.actions';
 
 export const EntryForm = props => {
-  const [entry, setEntry] = useState(initialState);
+  const [entry, setEntry] = useState('');
 
-  const changeHandler = ev => {
-    ev.persist();
-    let value = ev.target.value;
-    setEntry({
-      ...entry,
-      [ev.target.name]: value
-    });
+  const changeHandler = e => {
+    setEntry(e.target.value);
   };
 
-  const handleSubmit = e => {
+  const handleSubmit = (e) => {
     e.preventDefault();
-    console.log("entry to be posted", entry);
+    props.createEntry({text: entry});
   };
 
   return (
@@ -40,6 +23,7 @@ export const EntryForm = props => {
           name="entryText"
           // placeholder="What Happened today?"
           rows="3"
+          value={entry}
           onChange={changeHandler}
         />
         <div className='buttonDiv'>
@@ -58,5 +42,8 @@ export const EntryForm = props => {
 //         entryList: state.entries
 //     }
 // }
+const mapDispatchToProps = dispatch => ({
+  createEntry: text => dispatch(createEntryRequest(text))
+})
 
-export default connect()(EntryForm);
+export default connect(null, mapDispatchToProps)(EntryForm);

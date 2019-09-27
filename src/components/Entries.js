@@ -4,7 +4,7 @@ import styled from "styled-components";
 import { createStructuredSelector } from "reselect";
 import { selectEntriesList } from "redux/entries/entries.selectors";
 import Entry from "components/Entry";
-import EntryForm from "../containers/EntryForm/EntryForm";
+import EntryForm from "containers/EntryForm/EntryForm";
 
 const StyledContainer = styled.div`
   @import url("https://fonts.googleapis.com/css?family=Cutive+Mono|Encode+Sans+Semi+Condensed&display=swap");
@@ -77,6 +77,8 @@ const Entries = ({ entries }) => {
     </div>
   );
 };
+
+
 
 const mapStateToProps = createStructuredSelector({
   entries: selectEntriesList
